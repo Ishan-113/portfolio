@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ishan Prajapati — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #080c14;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #60a5fa;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: opacity 0.2s;
+    }
+    .back-btn:hover { opacity: 0.7; }
+
+    .resume {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #0d1526;
+      border: 1px solid rgba(59,130,246,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #080c14;
+      padding: 36px 24px;
+      flex-shrink: 0;
+      border-right: 1px solid rgba(59,130,246,0.1);
+    }
+
+    .avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-title {
+      font-size: 11px;
+      color: #60a5fa;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .s-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin-bottom: 10px;
+      margin-top: 22px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-item:hover { color: #60a5fa; }
+
+    .contact-item svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    .skill-row { margin-bottom: 10px; }
+
+    .skill-name {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .skill-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      color: #93c5fd;
+    }
+
+    .cert-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+
+    .cert-name { font-size: 11px; color: #e2e8f0; font-weight: 500; margin-bottom: 2px; }
+    .cert-org { font-size: 10px; color: #475569; }
+
+    .cert-badge {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      background: rgba(34,197,94,0.1);
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .cert-badge.ip {
+      background: rgba(59,130,246,0.1);
+      color: #60a5fa;
+    }
+
+    /* Main */
+    .main { flex: 1; padding: 36px 32px; }
+
+    .main-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #f8fafc;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .main-title {
+      font-size: 12px;
+      color: #3b82f6;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(59,130,246,0.4), transparent);
+      margin-bottom: 20px;
+    }
+
+    .m-section { margin-bottom: 24px; }
+
+    .m-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .m-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(59,130,246,0.15);
+    }
+
+    .profile-text {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .edu-item { margin-bottom: 12px; }
+
+    .edu-degree {
+      font-size: 13px;
+      font-weight: 500;
+      color: #e2e8f0;
+      margin-bottom: 2px;
+    }
+
+    .edu-school { font-size: 11px; color: #475569; margin-bottom: 4px; }
+
+    .edu-badges { display: flex; gap: 6px; }
+
+    .badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .badge-gold {
+      background: rgba(234,179,8,0.1);
+      color: #f0c040;
+      border: 1px solid rgba(234,179,8,0.2);
+    }
+
+    .badge-gray {
+      background: rgba(255,255,255,0.05);
+      color: #64748b;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ===== ENHANCED PROJECT CARDS ===== */
+    .project-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid #3b82f6;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      transition: all 0.2s;
+    }
+
+    .project-block:hover {
+      border-color: rgba(59,130,246,0.4);
+      background: rgba(59,130,246,0.03);
+      transform: translateX(3px);
+    }
+
+    .project-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      gap: 10px;
+    }
+
+    .project-block-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-block-links {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ===== REAL BUTTONS FOR LIVE & GITHUB ===== */
+    .proj-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .proj-btn svg {
+      width: 11px; height: 11px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .proj-btn-live {
+      background: rgba(34,197,94,0.12);
+      color: #22c55e;
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+
+    .proj-btn-live:hover {
+      background: rgba(34,197,94,0.22);
+      box-shadow: 0 0 10px rgba(34,197,94,0.2);
+      transform: translateY(-1px);
+    }
+
+    .proj-btn-github {
+      background: rgba(148,163,184,0.1);
+      color: #94a3b8;
+      border: 1px solid rgba(148,163,184,0.2);
+    }
+
+    .proj-btn-github:hover {
+      background: rgba(148,163,184,0.2);
+      color: #e2e8f0;
+      transform: translateY(-1px);
+    }
+
+    .project-stack {
+      font-size: 10px;
+      color: #475569;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .project-points { list-style: none; }
+
+    .project-points li {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.6;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .project-points li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-size: 9px;
+      top: 1px;
+    }
+
+    .achieve-item {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: flex-start;
+    }
+
+    .achieve-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #3b82f6;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .achieve-text { font-size: 12px; color: #64748b; line-height: 1.5; }
+    .achieve-text strong { color: #94a3b8; font-weight: 500; }
+
+    .print-btn {
+      display: block;
+      text-align: center;
+      margin: 24px auto 0;
+      max-width: 820px;
+      padding: 12px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 10px;
+      color: #60a5fa;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .print-btn:hover { background: rgba(59,130,246,0.2); }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .resume { box-shadow: none; border-radius: 0; border: none; }
+      .sidebar { background: #1a1b2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .back-btn, .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
+  <div class="resume">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="avatar">IP</div>
+      <div class="sidebar-name">Ishan Prajapati</div>
+      <div class="sidebar-title">CS Engineer</div>
+
+      <div class="s-label">Contact</div>
+
+      <a href="mailto:ishanprajapati12112007@gmail.com" class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        ishanprajapati12112007@gmail.com
+      </a>
+
+      <a href="tel:+919867487579" class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 9867487579
+      </a>
+
+      <a href="https://github.com/Ishan-113" target="_blank" class="contact-item">
+        <!-- Real GitHub SVG -->
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        github.com/Ishan-113
+      </a>
+
+      <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank" class="contact-item">
+        <!-- Real LinkedIn SVG -->
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        ishan-prajapati
+      </a>
+
+      <a href="#" class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Mumbai, India
+      </a>
+
+      <div class="s-label">Skills</div>
+      <div class="skill-row">
+        <div class="skill-name">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">C</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Cybersecurity</span>
+        </div>
+      </div>
+
+      <div class="s-label">Certifications</div>
+      <div class="cert-item">
+        <div class="cert-name">Intro to Cybersecurity</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <span class="cert-badge">✓ Verified</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Networking Basics</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <span class="cert-badge ip">In Progress</span>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+      <div class="main-name">Ishan Prajapati</div>
+      <div class="main-title">Computer Engineering Student</div>
+      <div class="divider"></div>
+
+      <div class="m-section">
+        <div class="m-label">Profile</div>
+        <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed three live projects. Currently deepening expertise in cybersecurity and networking through Cisco NetAcad.</p>
+      </div>
+
+      <div class="m-section">
+        <div class="m-label">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">B.E. Computer Engineering — Semester 2</div>
+          <div class="edu-school">Thakur Shree DPS College of Engineering, Mumbai</div>
+          <div class="edu-badges">
+            <span class="badge badge-gold">SGPA 9.04</span>
+            <span class="badge badge-gray">Currently Enrolled</span>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Higher Secondary (12th) — 82.83%</div>
+          <div class="edu-school">Maharashtra State Board</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Secondary (10th) — 86.2%</div>
+          <div class="edu-school">Maharashtra State Board</div>
+        </div>
+      </div>
+
+      <div class="m-section">
+        <div class="m-label">Projects</div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🌤️ Weather App</div>
+            <div class="project-block-links">
+              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/weather-app" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">HTML · CSS · JavaScript · REST API · async/await</div>
+          <ul class="project-points">
+            <li>Integrated OpenWeatherMap API using fetch() and async/await for real-time weather data</li>
+            <li>Features city search, temperature, humidity, wind speed and dynamic weather icons</li>
+            <li>Implemented error handling with try/catch and glassmorphism UI</li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">💰 Expense Tracker</div>
+            <div class="project-block-links">
+              <a href="https://expense-tracker-peach-three-29.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/expense-tracker" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">HTML · CSS · JavaScript · localStorage</div>
+          <ul class="project-points">
+            <li>Built expense tracker with category filters, real-time totals and persistent localStorage</li>
+            <li>Used array methods (filter, reduce) and DOM manipulation for dynamic rendering</li>
+            <li>Clean monospace UI with animated expense cards and category filter pills</li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🃏 Blackjack Game</div>
+            <div class="project-block-links">
+              <a href="https://blackjack-alpha-wine.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/blackjack" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">HTML · CSS · JavaScript</div>
+          <ul class="project-points">
+            <li>Card game with real suit symbols (♠♥♦♣), bust detection and win logic</li>
+            <li>Dynamic chip betting system with score tracking (+$10 win / -$10 loss)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="m-section">
+        <div class="m-label">Achievements</div>
+        <div class="achieve-item">
+          <div class="achieve-dot"></div>
+          <div class="achieve-text">Achieved <strong>9.04 SGPA</strong> in Semester 1 of Computer Engineering</div>
+        </div>
+        <div class="achieve-item">
+          <div class="achieve-dot"></div>
+          <div class="achieve-text">Self-taught — built and deployed <strong>3 live web projects</strong> from scratch</div>
+        </div>
+        <div class="achieve-item">
+          <div class="achieve-dot"></div>
+          <div class="achieve-text">Strong academic performance in <strong>Mathematics and Science</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
