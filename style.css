@@ -372,7 +372,7 @@ nav {
 /* ============ PROJECTS ============ */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
@@ -503,6 +503,14 @@ nav {
 
 .skill-item.learning { color: var(--text-muted); font-style: italic; }
 .skill-icon { font-size: 16px; }
+
+/* Skill logo images */
+.skill-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 /* Certs */
 .certs h4 {
@@ -677,27 +685,6 @@ footer p {
   will-change: transform;
 }
 
-/* Glowing border on featured card */
-.project-card.featured {
-  border-color: rgba(59,130,246,0.3);
-  box-shadow: 0 0 30px rgba(59,130,246,0.08);
-  position: relative;
-}
-
-.project-card.featured::after {
-  content: 'FEATURED';
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #60a5fa;
-  background: rgba(59,130,246,0.1);
-  border: 1px solid rgba(59,130,246,0.2);
-  padding: 3px 8px;
-  border-radius: 10px;
-}
 
 /* Skill items hover */
 .skill-item {
