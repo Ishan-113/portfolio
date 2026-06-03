@@ -390,9 +390,10 @@
     .print-btn:hover { background: rgba(59,130,246,0.2); }
 
     @media print {
-      body { background: white; padding: 0; }
+      body { background: #080c14; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .resume { box-shadow: none; border-radius: 0; border: none; }
-      .sidebar { background: #1a1b2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .sidebar { background: #080c14 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .main { background: #0d1526; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .back-btn, .print-btn { display: none; }
     }
   </style>
