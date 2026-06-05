@@ -22,16 +22,52 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Start counters when hero is visible
-  animateCounters();
-
-  // Typing effect
+  // Typing effect on load
   typeEffect();
+
+  // Counter: trigger when hero stats scroll into view
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counterObserver.observe(statsEl);
+  }
+
+  // Project card tilt (inside DOMContentLoaded so cards exist)
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 15;
+      const rotateY = (centerX - x) / 15;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.5s ease';
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.1s ease';
+    });
+  });
 });
 
 // ============ ACTIVE NAV ON SCROLL ============
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
+
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
 
 window.addEventListener('scroll', () => {
   let current = '';
@@ -48,12 +84,14 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // Parallax on hero blobs
-  const scrollY = window.scrollY;
-  const blob1 = document.querySelector('.blob1');
-  const blob2 = document.querySelector('.blob2');
-  if (blob1) blob1.style.transform = `translateY(${scrollY * 0.15}px)`;
-  if (blob2) blob2.style.transform = `translateY(${scrollY * 0.1}px)`;
+  // Parallax on hero blobs — skip on touch devices
+  if (!isTouchDevice) {
+    const scrollY = window.scrollY;
+    const blob1 = document.querySelector('.blob1');
+    const blob2 = document.querySelector('.blob2');
+    if (blob1) blob1.style.transform = `translateY(${scrollY * 0.15}px)`;
+    if (blob2) blob2.style.transform = `translateY(${scrollY * 0.1}px)`;
+  }
 });
 
 // ============ COUNTER ANIMATION ============
@@ -93,64 +131,39 @@ function typeEffect() {
   }, 50);
 }
 
-// ============ PROJECT CARD TILT ============
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 15;
-    const rotateY = (centerX - x) / 15;
-    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+// ============ CURSOR GLOW (desktop only) ============
+if (!isTouchDevice) {
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-glow';
+  document.body.appendChild(cursor);
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
   });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-    card.style.transition = 'transform 0.5s ease';
-  });
-});
-
-// ============ SKILL BAR ANIMATION ============
-const skillLevels = {
-  'HTML5': 85, 'CSS3': 80, 'JavaScript': 70, 'C': 60,
-  'Git & GitHub': 75, 'Vercel': 70, 'VS Code': 85, 'Node.js': 40,
-  'REST APIs': 65, 'localStorage': 70, 'Networking': 60, 'Cybersecurity': 45,
-  'React.js': 15, 'Node.js + Express': 10, 'Databases': 10, 'Ethical Hacking': 20
-};
-
-// ============ CURSOR GLOW ============
-const cursor = document.createElement('div');
-cursor.className = 'cursor-glow';
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
+}
 
 // ============ MOBILE HAMBURGER MENU ============
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinksEl = document.getElementById('navLinks');
 
-if (hamburger && navLinks) {
+if (hamburger && navLinksEl) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
-    navLinks.classList.toggle('mobile-open');
-    document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : '';
+    navLinksEl.classList.toggle('mobile-open');
+    document.body.style.overflow = navLinksEl.classList.contains('mobile-open') ? 'hidden' : '';
   });
 
-  // Close menu when a nav link is tapped
-  navLinks.querySelectorAll('a').forEach(link => {
+  navLinksEl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
-      navLinks.classList.remove('mobile-open');
+      navLinksEl.classList.remove('mobile-open');
       document.body.style.overflow = '';
     });
   });
 }
 
+// ============ SMOOTH SCROLL FOR NAV ============
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -161,7 +174,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ============ HIGHLIGHT SECTIONS ON SCROLL ============
+// ============ SECTION HIGHLIGHT ON SCROLL ============
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

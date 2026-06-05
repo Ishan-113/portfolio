@@ -389,12 +389,129 @@
 
     .print-btn:hover { background: rgba(59,130,246,0.2); }
 
+    /* ============ ANIMATIONS ============ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .anim-fade-up   { opacity: 0; }
+    .anim-fade-in   { opacity: 0; }
+    .anim-slide-left{ opacity: 0; }
+
+    .anim-fade-up.visible    { animation: fadeUp 0.5s ease forwards; }
+    .anim-fade-in.visible    { animation: fadeIn 0.5s ease forwards; }
+    .anim-slide-left.visible { animation: slideInLeft 0.5s ease forwards; }
+
+    /* ============ PRINT ============ */
     @media print {
-      body { background: #080c14; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body {
+        background: #080c14;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
       .resume { box-shadow: none; border-radius: 0; border: none; }
-      .sidebar { background: #080c14 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .main { background: #0d1526; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .sidebar {
+        background: #080c14 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .main {
+        background: #0d1526;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
       .back-btn, .print-btn { display: none; }
+      /* make sure animations don't freeze on print */
+      .anim-fade-up, .anim-fade-in, .anim-slide-left { opacity: 1 !important; animation: none !important; }
+    }
+
+    /* ============ TABLET (≤ 780px) ============ */
+    @media (max-width: 780px) {
+      .resume {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(59,130,246,0.12);
+        padding: 24px 20px;
+      }
+
+      /* Top strip: avatar + name side by side */
+      .sidebar-top {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .avatar { margin-bottom: 0; flex-shrink: 0; }
+
+      /* Skills & contact in a 2-col grid */
+      .sidebar-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+      }
+
+      /* Section labels span full width */
+      .s-label { grid-column: 1 / -1; margin-top: 12px; }
+
+      /* Certs side by side */
+      .certs-row {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .main { padding: 28px 20px; }
+    }
+
+    /* ============ MOBILE (≤ 500px) ============ */
+    @media (max-width: 500px) {
+      body { padding: 16px 10px; }
+
+      .back-btn { font-size: 12px; margin-bottom: 20px; }
+
+      .resume { border-radius: 12px; }
+
+      .avatar { width: 56px; height: 56px; font-size: 18px; }
+      .sidebar-name { font-size: 16px; }
+
+      /* Stack sidebar body single col on very small */
+      .sidebar-body { grid-template-columns: 1fr; }
+      .certs-row { grid-template-columns: 1fr; }
+
+      .main { padding: 20px 14px; }
+
+      .main-name { font-size: 22px; }
+      .main-title { font-size: 10px; }
+
+      .project-block-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .project-block-links { flex-wrap: wrap; }
+
+      .proj-btn { font-size: 10px; }
+
+      .print-btn { font-size: 12px; }
     }
   </style>
 </head>
@@ -403,10 +520,16 @@
 
   <div class="resume">
     <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="avatar">IP</div>
-      <div class="sidebar-name">Ishan Prajapati</div>
-      <div class="sidebar-title">CS Engineer</div>
+    <div class="sidebar anim-slide-left">
+      <div class="sidebar-top">
+        <div class="avatar">IP</div>
+        <div>
+          <div class="sidebar-name">Ishan Prajapati</div>
+          <div class="sidebar-title">CS Engineer</div>
+        </div>
+      </div>
+
+      <div class="sidebar-body">
 
       <div class="s-label">Contact</div>
 
@@ -468,30 +591,34 @@
       </div>
 
       <div class="s-label">Certifications</div>
-      <div class="cert-item">
-        <div class="cert-name">Intro to Cybersecurity</div>
-        <div class="cert-org">Cisco Networking Academy</div>
-        <span class="cert-badge">✓ Verified</span>
+      <div class="certs-row">
+        <div class="cert-item">
+          <div class="cert-name">Intro to Cybersecurity</div>
+          <div class="cert-org">Cisco Networking Academy</div>
+          <span class="cert-badge">✓ Verified</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">Networking Basics</div>
+          <div class="cert-org">Cisco Networking Academy</div>
+          <span class="cert-badge ip">In Progress</span>
+        </div>
       </div>
-      <div class="cert-item">
-        <div class="cert-name">Networking Basics</div>
-        <div class="cert-org">Cisco Networking Academy</div>
-        <span class="cert-badge ip">In Progress</span>
-      </div>
-    </div>
+
+      </div><!-- end sidebar-body -->
+    </div><!-- end sidebar -->
 
     <!-- Main -->
     <div class="main">
-      <div class="main-name">Ishan Prajapati</div>
-      <div class="main-title">Computer Engineering Student</div>
-      <div class="divider"></div>
+      <div class="main-name anim-fade-up">Ishan Prajapati</div>
+      <div class="main-title anim-fade-up" style="animation-delay:0.1s">Computer Engineering Student</div>
+      <div class="divider anim-fade-in" style="animation-delay:0.15s"></div>
 
-      <div class="m-section">
+      <div class="m-section anim-fade-up" style="animation-delay:0.2s">
         <div class="m-label">Profile</div>
         <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed four live projects. Currently deepening expertise in cybersecurity and networking through Cisco NetAcad.</p>
       </div>
 
-      <div class="m-section">
+      <div class="m-section anim-fade-up" style="animation-delay:0.25s">
         <div class="m-label">Education</div>
         <div class="edu-item">
           <div class="edu-degree">B.E. Computer Engineering — Semester 2</div>
@@ -511,7 +638,7 @@
         </div>
       </div>
 
-      <div class="m-section">
+      <div class="m-section anim-fade-up" style="animation-delay:0.3s">
         <div class="m-label">Projects</div>
 
         <div class="project-block">
@@ -602,7 +729,7 @@
         </div>
       </div>
 
-      <div class="m-section">
+      <div class="m-section anim-fade-up" style="animation-delay:0.35s">
         <div class="m-label">Achievements</div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>
@@ -621,5 +748,57 @@
   </div>
 
   <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+  <script>
+    // ---- Scroll-triggered fade animations ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.anim-fade-up, .anim-fade-in, .anim-slide-left')
+      .forEach((el, i) => {
+        // Stagger elements that don't already have a delay set
+        if (!el.style.animationDelay) {
+          el.style.animationDelay = `${i * 0.07}s`;
+        }
+        observer.observe(el);
+      });
+
+    // ---- Project card tilt on hover ----
+    document.querySelectorAll('.project-block').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const centerX = rect.width / 2;
+        const rotateY = (x - centerX) / 25;
+        card.style.transform = `perspective(600px) rotateY(${rotateY}deg) translateX(3px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.transition = 'transform 0.4s ease';
+      });
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'transform 0.1s ease';
+      });
+    });
+
+    // ---- Cert card subtle pulse on hover ----
+    document.querySelectorAll('.cert-item').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.borderColor = 'rgba(59,130,246,0.35)';
+        card.style.background = 'rgba(59,130,246,0.05)';
+        card.style.transition = 'all 0.2s ease';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.borderColor = '';
+        card.style.background = '';
+      });
+    });
+  </script>
 </body>
 </html>
