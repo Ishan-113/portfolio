@@ -389,59 +389,126 @@
 
     .print-btn:hover { background: rgba(59,130,246,0.2); }
 
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      body { background: #ffffff; padding: 0; color: #0f172a; }
+
+      .back-btn, .print-btn { display: none; }
+
+      .resume {
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        max-width: 100%;
+        display: flex !important;
+        flex-direction: row !important;
+      }
+
+      /* Sidebar: force side-by-side, reset all mobile overrides */
+      .sidebar {
+        width: 230px !important;
+        min-width: 230px !important;
+        flex-shrink: 0 !important;
+        background: #1e2d4a !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        padding: 28px 18px !important;
+        display: block !important;
+      }
+
+      .sidebar-top { display: flex !important; align-items: center; gap: 12px; margin-bottom: 18px; }
+      .sidebar-body { display: block !important; grid-template-columns: unset !important; }
+      .certs-row { display: block !important; grid-template-columns: unset !important; }
+
+      .avatar { width: 52px !important; height: 52px !important; font-size: 16px !important; flex-shrink: 0; margin-bottom: 0 !important; }
+      .sidebar-name { color: #ffffff !important; font-size: 14px !important; }
+      .sidebar-title { color: #93c5fd !important; font-size: 10px !important; }
+      .s-label { color: #93c5fd !important; border-bottom-color: rgba(147,197,253,0.3) !important; font-size: 9px !important; margin-top: 14px !important; }
+
+      .contact-item { color: #cbd5e1 !important; font-size: 10px !important; margin-bottom: 5px; }
+      .skill-tag {
+        background: rgba(147,197,253,0.15) !important;
+        border-color: rgba(147,197,253,0.3) !important;
+        color: #bfdbfe !important;
+        font-size: 9px !important;
+        padding: 2px 6px !important;
+      }
+
+      .cert-item {
+        background: rgba(255,255,255,0.05) !important;
+        border-color: rgba(147,197,253,0.2) !important;
+        margin-bottom: 8px;
+        padding: 8px 10px !important;
+      }
+      .cert-name { color: #f1f5f9 !important; font-size: 10px !important; }
+      .cert-org { color: #94a3b8 !important; font-size: 9px !important; }
+      .cert-badge { background: rgba(34,197,94,0.2) !important; color: #86efac !important; font-size: 8px !important; }
+      .cert-badge.ip { background: rgba(147,197,253,0.2) !important; color: #93c5fd !important; }
+
+      /* Main: clean white, flex:1 to fill remaining space */
+      .main {
+        flex: 1 !important;
+        background: #ffffff !important;
+        padding: 24px 22px !important;
+      }
+
+      .main-name { color: #0f172a !important; font-size: 26px !important; }
+      .main-title { color: #2563eb !important; font-size: 9px !important; }
+      .divider { background: linear-gradient(90deg, #2563eb, transparent) !important; }
+      .m-label { color: #2563eb !important; font-size: 9px !important; }
+      .m-label::after { background: rgba(37,99,235,0.2) !important; }
+      .profile-text { color: #334155 !important; font-size: 11px !important; }
+
+      .edu-degree { color: #0f172a !important; font-size: 12px !important; }
+      .edu-school { color: #475569 !important; font-size: 11px !important; }
+      .badge-gold { background: rgba(234,179,8,0.12) !important; color: #92400e !important; border-color: rgba(234,179,8,0.3) !important; font-size: 9px !important; }
+      .badge-gray { background: rgba(0,0,0,0.05) !important; color: #475569 !important; border-color: rgba(0,0,0,0.1) !important; font-size: 9px !important; }
+
+      /* Project cards */
+      .project-block {
+        background: #f8faff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 3px solid #2563eb !important;
+        box-shadow: none !important;
+        transform: none !important;
+        break-inside: avoid;
+        margin-bottom: 8px !important;
+        padding: 10px 12px !important;
+      }
+
+      .project-block-name { color: #0f172a !important; font-size: 12px !important; }
+      .project-stack { color: #64748b !important; font-size: 9px !important; }
+      .project-points li { color: #334155 !important; font-size: 10px !important; }
+      .project-points li::before { color: #2563eb !important; }
+      .proj-btn { font-size: 8px !important; padding: 3px 7px !important; }
+
+      .achieve-text { color: #334155 !important; font-size: 11px !important; }
+      .achieve-text strong { color: #0f172a !important; }
+      .achieve-dot { background: #2563eb !important; }
+
+      /* Freeze animations */
+      .anim-fade-up, .anim-slide-left { opacity: 1 !important; animation: none !important; }
+    }
     /* ============ ANIMATIONS ============ */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
     @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-20px); }
+      from { opacity: 0; transform: translateX(-24px); }
       to   { opacity: 1; transform: translateX(0); }
     }
 
-    .anim-fade-up   { opacity: 0; }
-    .anim-fade-in   { opacity: 0; }
-    .anim-slide-left{ opacity: 0; }
+    .anim-fade-up    { opacity: 0; }
+    .anim-slide-left { opacity: 0; }
 
     .anim-fade-up.visible    { animation: fadeUp 0.5s ease forwards; }
-    .anim-fade-in.visible    { animation: fadeIn 0.5s ease forwards; }
     .anim-slide-left.visible { animation: slideInLeft 0.5s ease forwards; }
-
-    /* ============ PRINT ============ */
-    @media print {
-      body {
-        background: #080c14;
-        padding: 0;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      .resume { box-shadow: none; border-radius: 0; border: none; }
-      .sidebar {
-        background: #080c14 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      .main {
-        background: #0d1526;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      .back-btn, .print-btn { display: none; }
-      /* make sure animations don't freeze on print */
-      .anim-fade-up, .anim-fade-in, .anim-slide-left { opacity: 1 !important; animation: none !important; }
-    }
 
     /* ============ TABLET (≤ 780px) ============ */
     @media (max-width: 780px) {
-      .resume {
-        flex-direction: column;
-      }
+      .resume { flex-direction: column; }
 
       .sidebar {
         width: 100%;
@@ -450,7 +517,6 @@
         padding: 24px 20px;
       }
 
-      /* Top strip: avatar + name side by side */
       .sidebar-top {
         display: flex;
         align-items: center;
@@ -460,17 +526,14 @@
 
       .avatar { margin-bottom: 0; flex-shrink: 0; }
 
-      /* Skills & contact in a 2-col grid */
       .sidebar-body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 20px;
       }
 
-      /* Section labels span full width */
       .s-label { grid-column: 1 / -1; margin-top: 12px; }
 
-      /* Certs side by side */
       .certs-row {
         grid-column: 1 / -1;
         display: grid;
@@ -484,33 +547,17 @@
     /* ============ MOBILE (≤ 500px) ============ */
     @media (max-width: 500px) {
       body { padding: 16px 10px; }
-
       .back-btn { font-size: 12px; margin-bottom: 20px; }
-
       .resume { border-radius: 12px; }
-
       .avatar { width: 56px; height: 56px; font-size: 18px; }
       .sidebar-name { font-size: 16px; }
-
-      /* Stack sidebar body single col on very small */
       .sidebar-body { grid-template-columns: 1fr; }
       .certs-row { grid-template-columns: 1fr; }
-
       .main { padding: 20px 14px; }
-
       .main-name { font-size: 22px; }
       .main-title { font-size: 10px; }
-
-      .project-block-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
+      .project-block-header { flex-direction: column; align-items: flex-start; gap: 8px; }
       .project-block-links { flex-wrap: wrap; }
-
-      .proj-btn { font-size: 10px; }
-
       .print-btn { font-size: 12px; }
     }
   </style>
@@ -528,9 +575,7 @@
           <div class="sidebar-title">CS Engineer</div>
         </div>
       </div>
-
       <div class="sidebar-body">
-
       <div class="s-label">Contact</div>
 
       <a href="mailto:ishanprajapati12112007@gmail.com" class="contact-item">
@@ -592,18 +637,17 @@
 
       <div class="s-label">Certifications</div>
       <div class="certs-row">
-        <div class="cert-item">
-          <div class="cert-name">Intro to Cybersecurity</div>
-          <div class="cert-org">Cisco Networking Academy</div>
-          <span class="cert-badge">✓ Verified</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-name">Networking Basics</div>
-          <div class="cert-org">Cisco Networking Academy</div>
-          <span class="cert-badge ip">In Progress</span>
-        </div>
+      <div class="cert-item">
+        <div class="cert-name">Intro to Cybersecurity</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <span class="cert-badge">✓ Verified</span>
       </div>
-
+      <div class="cert-item">
+        <div class="cert-name">Networking Basics</div>
+        <div class="cert-org">Cisco Networking Academy</div>
+        <span class="cert-badge ip">In Progress</span>
+      </div>
+      </div><!-- end certs-row -->
       </div><!-- end sidebar-body -->
     </div><!-- end sidebar -->
 
@@ -611,14 +655,14 @@
     <div class="main">
       <div class="main-name anim-fade-up">Ishan Prajapati</div>
       <div class="main-title anim-fade-up" style="animation-delay:0.1s">Computer Engineering Student</div>
-      <div class="divider anim-fade-in" style="animation-delay:0.15s"></div>
+      <div class="divider anim-fade-up" style="animation-delay:0.15s"></div>
 
-      <div class="m-section anim-fade-up" style="animation-delay:0.2s">
+      <div class="m-section">
         <div class="m-label">Profile</div>
         <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed four live projects. Currently deepening expertise in cybersecurity and networking through Cisco NetAcad.</p>
       </div>
 
-      <div class="m-section anim-fade-up" style="animation-delay:0.25s">
+      <div class="m-section">
         <div class="m-label">Education</div>
         <div class="edu-item">
           <div class="edu-degree">B.E. Computer Engineering — Semester 2</div>
@@ -638,7 +682,7 @@
         </div>
       </div>
 
-      <div class="m-section anim-fade-up" style="animation-delay:0.3s">
+      <div class="m-section">
         <div class="m-label">Projects</div>
 
         <div class="project-block">
@@ -729,7 +773,7 @@
         </div>
       </div>
 
-      <div class="m-section anim-fade-up" style="animation-delay:0.35s">
+      <div class="m-section">
         <div class="m-label">Achievements</div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>
@@ -750,7 +794,7 @@
   <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
   <script>
-    // ---- Scroll-triggered fade animations ----
+    // Scroll-triggered fade animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -758,18 +802,21 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.anim-fade-up, .anim-fade-in, .anim-slide-left')
-      .forEach((el, i) => {
-        // Stagger elements that don't already have a delay set
-        if (!el.style.animationDelay) {
-          el.style.animationDelay = `${i * 0.07}s`;
-        }
-        observer.observe(el);
-      });
+    document.querySelectorAll('.anim-fade-up, .anim-slide-left').forEach((el, i) => {
+      if (!el.style.animationDelay) el.style.animationDelay = `${i * 0.07}s`;
+      observer.observe(el);
+    });
 
-    // ---- Project card tilt on hover ----
+    // Also animate m-sections on scroll
+    document.querySelectorAll('.m-section').forEach((el, i) => {
+      el.classList.add('anim-fade-up');
+      el.style.animationDelay = `${0.2 + i * 0.1}s`;
+      observer.observe(el);
+    });
+
+    // Project card tilt
     document.querySelectorAll('.project-block').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -787,11 +834,11 @@
       });
     });
 
-    // ---- Cert card subtle pulse on hover ----
+    // Cert card hover
     document.querySelectorAll('.cert-item').forEach(card => {
       card.addEventListener('mouseenter', () => {
-        card.style.borderColor = 'rgba(59,130,246,0.35)';
-        card.style.background = 'rgba(59,130,246,0.05)';
+        card.style.borderColor = 'rgba(59,130,246,0.4)';
+        card.style.background = 'rgba(59,130,246,0.06)';
         card.style.transition = 'all 0.2s ease';
       });
       card.addEventListener('mouseleave', () => {
