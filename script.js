@@ -160,9 +160,9 @@ if (!isTouchDevice) {
   document.body.appendChild(cursorDot);
 
   let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
   let lastTrailX = 0, lastTrailY = 0;
-  let trailThrottle = 0;
-  const TRAIL_DISTANCE = 18; // px moved before spawning a new particle
+  const LERP = 0.18; // 0 = frozen, 1 = instant. 0.18 = smooth lag
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -170,20 +170,27 @@ if (!isTouchDevice) {
 
     cursorDot.style.left  = mouseX + 'px';
     cursorDot.style.top   = mouseY + 'px';
-    cursorRing.style.left = mouseX + 'px';
-    cursorRing.style.top  = mouseY + 'px';
     cursorGlow.style.left = mouseX + 'px';
     cursorGlow.style.top  = mouseY + 'px';
 
-    // Trail particles — spawn when cursor moves enough
     const dx = mouseX - lastTrailX;
     const dy = mouseY - lastTrailY;
-    if (Math.hypot(dx, dy) > TRAIL_DISTANCE) {
+    if (Math.hypot(dx, dy) > 18) {
       lastTrailX = mouseX;
       lastTrailY = mouseY;
       spawnTrailParticle(mouseX, mouseY);
     }
   });
+
+  // RAF loop — ring lerps toward mouse every frame (silky smooth)
+  function animateRing() {
+    ringX += (mouseX - ringX) * LERP;
+    ringY += (mouseY - ringY) * LERP;
+    cursorRing.style.left = ringX + 'px';
+    cursorRing.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
 
   // Hover effect on interactive elements
   const interactiveSelector = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary';
