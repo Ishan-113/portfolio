@@ -633,16 +633,70 @@ footer p {
 
 /* ============ EXTRA ANIMATIONS ============ */
 
-/* Cursor glow */
+/* ===== CURSOR SYSTEM ===== */
+
+/* Big ambient glow (slow follow) */
 .cursor-glow {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 65%);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 0;
-  transition: left 0.1s ease, top 0.1s ease;
+  transition: left 0.18s ease, top 0.18s ease;
+}
+
+/* Sharp dot cursor */
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: #60a5fa;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: left 0.04s linear, top 0.04s linear, width 0.2s, height 0.2s, opacity 0.2s;
+  box-shadow: 0 0 8px rgba(96,165,250,0.9), 0 0 20px rgba(96,165,250,0.4);
+  mix-blend-mode: screen;
+}
+
+/* Ring that lags behind */
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(96,165,250,0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: left 0.12s ease, top 0.12s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.2s;
+}
+
+/* States when hovering interactive elements */
+body.cursor-hover .cursor-dot {
+  width: 14px; height: 14px;
+  background: #818cf8;
+  box-shadow: 0 0 14px rgba(129,140,248,1), 0 0 40px rgba(129,140,248,0.4);
+}
+body.cursor-hover .cursor-ring {
+  width: 56px; height: 56px;
+  border-color: rgba(129,140,248,0.6);
+}
+
+/* Trailing particles */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  animation: trailFade 0.5s ease forwards;
+}
+
+@keyframes trailFade {
+  0%   { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(0.1); }
 }
 
 /* Nav active */
@@ -651,16 +705,23 @@ footer p {
   font-weight: 500;
 }
 
-/* Fade up animation */
+/* Fade up / vanish animation */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
 }
 
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Vanish upward when scrolled past */
+.fade-up.exit-up {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* Section highlight */
@@ -921,7 +982,7 @@ footer:hover {
 
   footer { padding: 24px 20px; flex-direction: column; gap: 6px; text-align: center; }
 
-  .cursor-glow { display: none; }
+  .cursor-glow, .cursor-dot, .cursor-ring { display: none; }
 }
 
 /* ============ VERY SMALL (≤ 380px) ============ */

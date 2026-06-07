@@ -1,11 +1,23 @@
-// ============ SCROLL ANIMATIONS ============
+// ============ SCROLL ANIMATIONS (bidirectional) ============
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    const el = entry.target;
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      el.classList.remove('exit-up');
+      el.classList.add('visible');
+    } else {
+      // Only vanish upward if element is above viewport (scrolled past)
+      if (entry.boundingClientRect.top < 0) {
+        el.classList.add('exit-up');
+        el.classList.remove('visible');
+      } else {
+        // Coming from below — just un-visible so it can re-enter
+        el.classList.remove('visible');
+        el.classList.remove('exit-up');
+      }
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12 });
 
 document.addEventListener('DOMContentLoaded', () => {
   // Staggered fade-up for cards
@@ -131,16 +143,70 @@ function typeEffect() {
   }, 50);
 }
 
-// ============ CURSOR GLOW (desktop only) ============
+// ============ CURSOR SYSTEM (desktop only) ============
 if (!isTouchDevice) {
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor-glow';
-  document.body.appendChild(cursor);
+  // Create elements
+  const cursorGlow = document.createElement('div');
+  cursorGlow.className = 'cursor-glow';
+
+  const cursorDot = document.createElement('div');
+  cursorDot.className = 'cursor-dot';
+
+  const cursorRing = document.createElement('div');
+  cursorRing.className = 'cursor-ring';
+
+  document.body.appendChild(cursorGlow);
+  document.body.appendChild(cursorRing);
+  document.body.appendChild(cursorDot);
+
+  let mouseX = 0, mouseY = 0;
+  let lastTrailX = 0, lastTrailY = 0;
+  let trailThrottle = 0;
+  const TRAIL_DISTANCE = 18; // px moved before spawning a new particle
 
   document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left  = mouseX + 'px';
+    cursorDot.style.top   = mouseY + 'px';
+    cursorRing.style.left = mouseX + 'px';
+    cursorRing.style.top  = mouseY + 'px';
+    cursorGlow.style.left = mouseX + 'px';
+    cursorGlow.style.top  = mouseY + 'px';
+
+    // Trail particles — spawn when cursor moves enough
+    const dx = mouseX - lastTrailX;
+    const dy = mouseY - lastTrailY;
+    if (Math.hypot(dx, dy) > TRAIL_DISTANCE) {
+      lastTrailX = mouseX;
+      lastTrailY = mouseY;
+      spawnTrailParticle(mouseX, mouseY);
+    }
   });
+
+  // Hover effect on interactive elements
+  const interactiveSelector = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary';
+  document.querySelectorAll(interactiveSelector).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  function spawnTrailParticle(x, y) {
+    const p = document.createElement('div');
+    p.className = 'cursor-trail';
+    const size = Math.random() * 5 + 3; // 3–8px
+    const hue = Math.random() > 0.5 ? '210' : '240'; // blue or indigo
+    p.style.cssText = `
+      left: ${x}px; top: ${y}px;
+      width: ${size}px; height: ${size}px;
+      background: hsla(${hue}, 100%, 70%, 0.7);
+      box-shadow: 0 0 ${size * 2}px hsla(${hue}, 100%, 70%, 0.5);
+    `;
+    document.body.appendChild(p);
+    // Remove after animation completes
+    setTimeout(() => p.remove(), 500);
+  }
 }
 
 // ============ MOBILE HAMBURGER MENU ============
