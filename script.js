@@ -162,7 +162,7 @@ if (!isTouchDevice) {
   let mouseX = 0, mouseY = 0;
   let ringX = 0, ringY = 0;
   let lastTrailX = 0, lastTrailY = 0;
-  const LERP = 0.18; // 0 = frozen, 1 = instant. 0.18 = smooth lag
+  const LERP = 0.12; // smoother ring follow
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
