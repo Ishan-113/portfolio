@@ -5,11 +5,10 @@ cybersecurity.
 
 ## About Me
 
-- Building small, practical web projects with HTML, CSS, and JavaScript.
-- Learning cybersecurity through networking fundamentals, Linux basics, web
-  security, and authorized pentesting labs.
-- Interested in cybersecurity internships, frontend developer internships, and
-  web security learning paths.
+- Building practical web projects with HTML, CSS, and JavaScript.
+- Learning cybersecurity through networking fundamentals and Linux basics.
+- Practicing web security only in authorized labs and CTF environments.
+- Interested in cybersecurity internships and frontend developer internships.
 - Portfolio: [portfolio-ishan-1224.vercel.app](https://portfolio-ishan-1224.vercel.app)
 
 ## Currently Learning
@@ -17,8 +16,9 @@ cybersecurity.
 - Networking fundamentals
 - Linux basics
 - Web security basics
-- Pentesting labs in authorized environments
-- JavaScript projects and frontend UI patterns
+- Authorized pentesting labs
+- JavaScript projects
+- Frontend UI patterns
 
 ## Tech Stack
 
@@ -35,10 +35,8 @@ cybersecurity.
 ## Cybersecurity Progress
 
 - Practicing beginner-friendly labs in legal environments.
-- Building writeups for DVWA, Metasploitable2, TryHackMe-style labs, and CTF
-  practice.
-- Focusing on responsible documentation, vulnerability analysis, and report
-  writing.
+- Building writeups for DVWA, Metasploitable2, TryHackMe-style labs, and CTFs.
+- Focusing on responsible documentation and report writing.
 
 ## Featured Projects
 
