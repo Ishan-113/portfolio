@@ -1,12 +1,15 @@
 # Hi, I'm Ishan Prajapati
 
-I'm a Computer Engineering student focused on frontend development and cybersecurity.
+I'm a Computer Engineering student focused on frontend development and
+cybersecurity.
 
 ## About Me
 
 - Building small, practical web projects with HTML, CSS, and JavaScript.
-- Learning cybersecurity through networking fundamentals, Linux basics, web security, and authorized pentesting labs.
-- Interested in cybersecurity internships, frontend developer internships, and web security learning paths.
+- Learning cybersecurity through networking fundamentals, Linux basics, web
+  security, and authorized pentesting labs.
+- Interested in cybersecurity internships, frontend developer internships, and
+  web security learning paths.
 - Portfolio: [portfolio-ishan-1224.vercel.app](https://portfolio-ishan-1224.vercel.app)
 
 ## Currently Learning
@@ -20,28 +23,22 @@ I'm a Computer Engineering student focused on frontend development and cybersecu
 ## Tech Stack
 
 ![HTML](https://img.shields.io/badge/HTML5-e34f26?logo=html5&logoColor=white)
-
 ![CSS](https://img.shields.io/badge/CSS3-1572b6?logo=css3&logoColor=white)
-
 ![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?logo=javascript&logoColor=black)
-
 ![Python](https://img.shields.io/badge/Python-3776ab?logo=python&logoColor=white)
-
 ![C](https://img.shields.io/badge/C-00599c?logo=c&logoColor=white)
-
 ![C++](https://img.shields.io/badge/C%2B%2B-00599c?logo=cplusplus&logoColor=white)
-
 ![Git](https://img.shields.io/badge/Git-f05032?logo=git&logoColor=white)
-
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
-
 ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
 ## Cybersecurity Progress
 
 - Practicing beginner-friendly labs in legal environments.
-- Building writeups for DVWA, Metasploitable2, TryHackMe-style labs, and CTF practice.
-- Focusing on responsible documentation, vulnerability analysis, and report writing.
+- Building writeups for DVWA, Metasploitable2, TryHackMe-style labs, and CTF
+  practice.
+- Focusing on responsible documentation, vulnerability analysis, and report
+  writing.
 
 ## Featured Projects
 
