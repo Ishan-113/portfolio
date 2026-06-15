@@ -124,6 +124,11 @@
     .project-points li { font-size: 11px; color: #64748b; line-height: 1.6; padding-left: 14px; position: relative; margin-bottom: 3px; }
     .project-points li::before { content: '▸'; position: absolute; left: 0; color: #3b82f6; font-size: 9px; top: 1px; }
 
+    .lab-summary { font-size: 12px; color: #64748b; line-height: 1.6; margin-bottom: 12px; }
+    .lab-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .lab-pill { font-size: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.18); color: #93c5fd; transition: all 0.2s; }
+    .lab-pill:hover { background: rgba(59,130,246,0.16); transform: translateY(-1px); }
+
     .achieve-item { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
     .achieve-dot { width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0; margin-top: 5px; }
     .achieve-text { font-size: 12px; color: #64748b; line-height: 1.5; }
@@ -191,6 +196,8 @@
       .project-stack { font-size: 9px; }
       .project-points li { font-size: 10px; }
       .proj-btn { font-size: 9px; padding: 3px 8px; }
+      .lab-summary { font-size: 10px; }
+      .lab-pill { font-size: 8px; padding: 3px 7px; }
       .achieve-text { font-size: 11px; }
       .project-block-header { flex-direction: column; align-items: flex-start; gap: 5px; }
       .project-block-links { flex-wrap: wrap; }
@@ -319,6 +326,11 @@
       .project-points li::before { color: #2563eb !important; }
       .project-block-header { margin-bottom: 3px !important; }
 
+      .lab-summary { color: #334155 !important; font-size: 8.5px !important; line-height: 1.35 !important; margin-bottom: 5px !important; }
+      .lab-pills { gap: 3px !important; margin-top: 4px !important; }
+      .lab-pill { color: #1d4ed8 !important; background: rgba(37,99,235,0.08) !important; border-color: rgba(37,99,235,0.2) !important; font-size: 7px !important; padding: 1px 5px !important; }
+      .lab-pill:hover { transform: none !important; }
+
       /* Clickable buttons in PDF */
       .proj-btn {
         display: inline-flex !important;
@@ -416,6 +428,16 @@
           <span class="skill-tag">Cybersecurity</span>
         </div>
       </div>
+      <div class="skill-row">
+        <div class="skill-name">Security Lab</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Kali Linux</span>
+          <span class="skill-tag">Nmap</span>
+          <span class="skill-tag">Metasploit</span>
+          <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">John</span>
+        </div>
+      </div>
 
       <div class="s-label">Certifications</div>
       <a href="https://www.credly.com/badges/1be4bca6-f42c-42bf-88e2-a6bc66905e0d/public_url" target="_blank" class="cert-item" style="display:block;text-decoration:none;">
@@ -443,7 +465,7 @@
 
       <div class="m-section">
         <div class="m-label">Profile</div>
-        <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed four live projects. Currently deepening expertise in cybersecurity and networking through Cisco NetAcad.</p>
+        <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed six live projects. On the security side, I run a Kali Linux home lab, complete guided pentests, root HackTheBox machines and document exploit chains in public writeups.</p>
       </div>
 
       <div class="m-section">
@@ -555,6 +577,84 @@
             <li>Built with vanilla JS, custom map rendering and dynamic content loading</li>
           </ul>
         </div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🖥️ Pentest Cheatsheet Terminal</div>
+            <div class="project-block-links">
+              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">HTML · CSS · JavaScript · Pentesting · Linux</div>
+          <ul class="project-points">
+            <li>Built a Kali-style browser terminal for quick pentesting command reference</li>
+            <li>Covers nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linpeas, ffuf and scp</li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">✨ This Portfolio</div>
+            <div class="project-block-links">
+              <a href="https://portfolio-ishan-1224.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/portfolio" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">HTML · CSS · JavaScript · Responsive Design · Animation</div>
+          <ul class="project-points">
+            <li>Built a responsive portfolio with scroll-triggered reveals, custom cursor and animated cards</li>
+            <li>Added a dedicated cybersecurity lab section and recruiter-friendly project presentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="m-section">
+        <div class="m-label">Cybersecurity Lab</div>
+        <p class="lab-summary">Hands-on ethical hacking practice in authorized labs only: Kali Linux on VMware, vulnerable VMs, TryHackMe paths, HackTheBox machines and public writeups.</p>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🖥️ Home Lab — Metasploitable2 & DVWA</div>
+          </div>
+          <div class="project-stack">Kali Linux · VMware · Metasploit · John the Ripper · DVWA</div>
+          <ul class="project-points">
+            <li>Exploited vsftpd 2.3.4 and Samba usermap_script in a controlled lab environment</li>
+            <li>Practiced SQL injection, command injection, hash cracking and privilege escalation workflows</li>
+          </ul>
+        </div>
+
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🎯 TryHackMe & HackTheBox Practice</div>
+          </div>
+          <div class="project-stack">TryHackMe · HackTheBox · Enumeration · Reverse Shells · Privilege Escalation</div>
+          <ul class="project-points">
+            <li>Completed TryHackMe Guided Pentest Web and Infrastructure paths at 100%</li>
+            <li>Rooted HTB machines including Meow, Fawn, Dancing, Redeemer, Appointment, Sequel, Crocodile, Responder and Cap</li>
+          </ul>
+        </div>
+
+        <div class="lab-pills">
+          <span class="lab-pill">Nmap</span>
+          <span class="lab-pill">Burp Suite</span>
+          <span class="lab-pill">Metasploit</span>
+          <span class="lab-pill">John</span>
+          <span class="lab-pill">Linux PrivEsc</span>
+          <span class="lab-pill">Writeups</span>
+        </div>
       </div>
 
       <div class="m-section">
@@ -565,11 +665,11 @@
         </div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>
-          <div class="achieve-text">Self-taught — built and deployed <strong>4 live web projects</strong> from scratch</div>
+          <div class="achieve-text">Self-taught — built and deployed <strong>6 live web projects</strong> from scratch</div>
         </div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>
-          <div class="achieve-text">Strong academic performance in <strong>Mathematics and Science</strong></div>
+          <div class="achieve-text">Built an authorized <strong>Kali Linux cybersecurity lab</strong> and documented exploit chains in public writeups</div>
         </div>
       </div>
     </div>

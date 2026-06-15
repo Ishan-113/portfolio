@@ -863,6 +863,105 @@ footer:hover {
 ::-webkit-scrollbar-thumb { background: #1d4ed8; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
 
+/* ============ CYBERSECURITY LAB ============ */
+.cyberlab-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.cyberlab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.cyber-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.cyber-card:hover {
+  border-color: rgba(59,130,246,0.3);
+  box-shadow: 0 0 20px rgba(59,130,246,0.06);
+  transform: translateY(-2px);
+}
+
+.cyber-card-icon { font-size: 24px; margin-bottom: 10px; }
+
+.cyber-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.cyber-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.htb-block { margin-bottom: 32px; }
+
+.htb-block h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-light);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.htb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.htb-pill {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid var(--border);
+  color: var(--blue-light);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.htb-pill:hover {
+  background: rgba(59,130,246,0.15);
+  transform: translateY(-2px);
+}
+
+.cyber-writeups-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--blue-light);
+  font-weight: 500;
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.cyber-writeups-link:hover {
+  background: rgba(59,130,246,0.08);
+  border-color: var(--blue);
+}
+
 
 /* ============ MOBILE HAMBURGER ============ */
 .nav-hamburger {
@@ -970,6 +1069,13 @@ footer:hover {
 
   .projects-grid { grid-template-columns: 1fr; }
   .project-card { padding: 22px 18px; }
+
+  .cyberlab-desc { font-size: 14px; }
+  .cyberlab-grid { grid-template-columns: 1fr; }
+  .cyber-card { padding: 18px; }
+  .htb-grid { gap: 8px; }
+  .htb-pill { font-size: 11px; padding: 5px 12px; }
+  .cyber-writeups-link { width: 100%; justify-content: center; }
 
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .skill-group { padding: 16px; }

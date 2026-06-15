@@ -20,6 +20,7 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#cyberlab">Lab</a>
       <a href="#contact">Contact</a>
       <a href="resume.html" class="nav-resume">Resume →</a>
     </div>
@@ -44,7 +45,7 @@
         <a href="resume.html" class="btn-secondary">View Resume</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span>4</span><p>Live Projects</p></div>
+        <div class="stat"><span>6</span><p>Live Projects</p></div>
         <div class="stat-divider"></div>
         <div class="stat"><span>9.04</span><p>SGPA</p></div>
         <div class="stat-divider"></div>
@@ -62,7 +63,7 @@
         <div class="about-left">
           <h2 class="section-title">A developer who<br/>thinks like a hacker.</h2>
           <p>I'm a Computer Engineering student at Thakur Shree DPS College of Engineering, Mumbai, with a strong academic record (9.04 SGPA). I'm passionate about two things: building clean web applications and understanding how systems can be secured.</p>
-          <p>I taught myself web development from scratch — building and deploying real projects with HTML, CSS, JavaScript, and REST APIs. At the same time, I'm pursuing cybersecurity through Cisco NetAcad, working through networking fundamentals that form the backbone of ethical hacking.</p>
+          <p>I taught myself web development from scratch — building and deploying real projects with HTML, CSS, JavaScript, and REST APIs. On the security side, I've moved past theory into hands-on practice: running a Kali Linux home lab, completing guided pentests on TryHackMe, and rooting machines on HackTheBox — every exploit chain documented and pushed to GitHub.</p>
           <div class="about-links">
             <a href="https://github.com/Ishan-113" target="_blank">GitHub ↗</a>
             <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank">LinkedIn ↗</a>
@@ -173,6 +174,38 @@
           </div>
         </div>
 
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-num">05</div>
+            <div class="project-links">
+              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank">Live ↗</a>
+              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">🖥️</div>
+          <h3>Pentest Cheatsheet Terminal</h3>
+          <p>A browser-based Kali-style terminal interface for quick command reference during engagements — covers nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linpeas, ffuf and scp.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Pentesting</span><span>Linux</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-num">06</div>
+            <div class="project-links">
+              <a href="https://portfolio-ishan-1224.vercel.app/" target="_blank">Live ↗</a>
+              <a href="https://github.com/Ishan-113/portfolio" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">✨</div>
+          <h3>This Portfolio</h3>
+          <p>The site you're on right now — built from scratch with a custom cursor system, scroll-triggered reveals, 3D card tilt and a fully responsive mobile layout.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Animation</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -256,10 +289,49 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section section-dark" id="contact">
+  <!-- Cybersecurity Lab -->
+  <section class="section section-dark" id="cyberlab">
     <div class="container">
-      <div class="section-tag">04 — Contact</div>
+      <div class="section-tag">04 — Cybersecurity Lab</div>
+      <h2 class="section-title">Hands-on hacking, not just theory.</h2>
+      <p class="cyberlab-desc">Alongside web development, I run a Kali Linux home lab on VMware and work through guided and unguided penetration testing labs — documenting every exploit chain in a public writeups repo.</p>
+
+      <div class="cyberlab-grid">
+        <div class="cyber-card">
+          <div class="cyber-card-icon">🖥️</div>
+          <h4>Home Lab — Metasploitable2 & DVWA</h4>
+          <p>Kali Linux 2026.1 (VMware) + Metasploitable2. Exploited vsftpd 2.3.4 (CVE-2011-2523) and Samba usermap_script (CVE-2007-2447) via Metasploit for a root shell, then cracked 6/7 password hashes with John the Ripper. Also ran a manual pentest on DVWA — UNION-based SQLi, OS command injection and SUID nmap privilege escalation.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cyber-card-icon">🎯</div>
+          <h4>TryHackMe — Guided Pentests</h4>
+          <p>Completed both Guided Pentest paths — Web and Infrastructure — at 100%. Covered IDOR, file upload bypass, RCE, reverse shells, UnrealIRCD backdoor exploitation via Metasploit, and root privilege escalation.</p>
+        </div>
+      </div>
+
+      <div class="htb-block">
+        <h4>HackTheBox — Machines Rooted</h4>
+        <div class="htb-grid">
+          <span class="htb-pill">Meow</span>
+          <span class="htb-pill">Fawn</span>
+          <span class="htb-pill">Dancing</span>
+          <span class="htb-pill">Redeemer</span>
+          <span class="htb-pill">Appointment</span>
+          <span class="htb-pill">Sequel</span>
+          <span class="htb-pill">Crocodile</span>
+          <span class="htb-pill">Responder</span>
+          <span class="htb-pill">Cap</span>
+        </div>
+      </div>
+
+      <a href="https://github.com/Ishan-113/pentest-writeups" target="_blank" class="cyber-writeups-link">📁 View all writeups on GitHub ↗</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-tag">05 — Contact</div>
       <h2 class="section-title">Let's connect.</h2>
       <p class="contact-desc">I'm always open to new opportunities, collaborations or just a good tech conversation. Feel free to reach out!</p>
       <div class="contact-grid">

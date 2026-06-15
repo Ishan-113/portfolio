@@ -21,7 +21,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Staggered fade-up for cards
-  const cards = document.querySelectorAll('.project-card, .about-card, .skill-group, .cert-card, .contact-card');
+  const cards = document.querySelectorAll('.project-card, .about-card, .skill-group, .cert-card, .contact-card, .cyber-card, .htb-pill, .cyber-writeups-link');
   cards.forEach((el, i) => {
     el.classList.add('fade-up');
     el.style.transitionDelay = `${i * 0.1}s`;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Section titles
-  document.querySelectorAll('.section-title, .section-tag, .contact-desc').forEach(el => {
+  document.querySelectorAll('.section-title, .section-tag, .contact-desc, .cyberlab-desc').forEach(el => {
     el.classList.add('fade-up');
     observer.observe(el);
   });
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     counterObserver.observe(statsEl);
   }
 
-  // Project card tilt (inside DOMContentLoaded so cards exist)
-  document.querySelectorAll('.project-card').forEach(card => {
+  // Card tilt (inside DOMContentLoaded so cards exist)
+  document.querySelectorAll('.project-card, .cyber-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -193,7 +193,7 @@ if (!isTouchDevice) {
   animateRing();
 
   // Hover effect on interactive elements
-  const interactiveSelector = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary';
+  const interactiveSelector = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary, .cyber-card, .htb-pill, .cyber-writeups-link';
   document.querySelectorAll(interactiveSelector).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
