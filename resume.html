@@ -106,6 +106,13 @@
     .badge-gold { background: rgba(234,179,8,0.1); color: #f0c040; border: 1px solid rgba(234,179,8,0.2); }
     .badge-gray { background: rgba(255,255,255,0.05); color: #64748b; border: 1px solid rgba(255,255,255,0.08); }
 
+    .resume-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .resume-card-grid .project-block { margin-bottom: 0; padding: 12px; }
+    .resume-card-grid .project-block-header { flex-direction: column; align-items: flex-start; gap: 7px; }
+    .resume-card-grid .project-block-name { font-size: 12px; line-height: 1.35; }
+    .resume-card-grid .project-stack { font-size: 9px; line-height: 1.4; margin-bottom: 6px; }
+    .resume-card-grid .project-points li { font-size: 10px; line-height: 1.5; }
+
     .project-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-left: 3px solid #3b82f6; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; transition: all 0.2s; }
     .project-block:hover { border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.03); transform: translateX(3px); }
     .project-block-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; gap: 10px; }
@@ -125,6 +132,7 @@
     .project-points li::before { content: '▸'; position: absolute; left: 0; color: #3b82f6; font-size: 9px; top: 1px; }
 
     .lab-summary { font-size: 12px; color: #64748b; line-height: 1.6; margin-bottom: 12px; }
+    .lab-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
     .lab-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
     .lab-pill { font-size: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.18); color: #93c5fd; transition: all 0.2s; }
     .lab-pill:hover { background: rgba(59,130,246,0.16); transform: translateY(-1px); }
@@ -191,6 +199,7 @@
       .edu-degree { font-size: 11px; }
       .edu-school { font-size: 10px; }
       .badge { font-size: 9px; }
+      .resume-card-grid { grid-template-columns: 1fr; gap: 10px; }
       .project-block { padding: 10px 12px; }
       .project-block-name { font-size: 11px; }
       .project-stack { font-size: 9px; }
@@ -326,7 +335,19 @@
       .project-points li::before { color: #2563eb !important; }
       .project-block-header { margin-bottom: 3px !important; }
 
+      .resume-card-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+      }
+      .resume-card-grid .project-block { margin-bottom: 0 !important; padding: 5px 7px !important; }
+      .resume-card-grid .project-block-header { flex-direction: column !important; align-items: flex-start !important; gap: 3px !important; }
+      .resume-card-grid .project-block-name { font-size: 8.5px !important; line-height: 1.25 !important; }
+      .resume-card-grid .project-stack { font-size: 6.8px !important; line-height: 1.25 !important; margin-bottom: 2px !important; }
+      .resume-card-grid .project-points li { font-size: 7.5px !important; line-height: 1.25 !important; padding-left: 9px !important; margin-bottom: 1px !important; }
+
       .lab-summary { color: #334155 !important; font-size: 8.5px !important; line-height: 1.35 !important; margin-bottom: 5px !important; }
+      .lab-actions { gap: 4px !important; margin-bottom: 5px !important; }
       .lab-pills { gap: 3px !important; margin-top: 4px !important; }
       .lab-pill { color: #1d4ed8 !important; background: rgba(37,99,235,0.08) !important; border-color: rgba(37,99,235,0.2) !important; font-size: 7px !important; padding: 1px 5px !important; }
       .lab-pill:hover { transform: none !important; }
@@ -491,6 +512,7 @@
       <div class="m-section">
         <div class="m-label">Projects</div>
 
+        <div class="resume-card-grid">
         <div class="project-block">
           <div class="project-block-header">
             <div class="project-block-name">🌤️ Weather App</div>
@@ -619,12 +641,21 @@
             <li>Added a dedicated cybersecurity lab section and recruiter-friendly project presentation</li>
           </ul>
         </div>
+        </div>
       </div>
 
       <div class="m-section">
         <div class="m-label">Cybersecurity Lab</div>
         <p class="lab-summary">Hands-on ethical hacking practice in authorized labs only: Kali Linux on VMware, vulnerable VMs, TryHackMe paths, HackTheBox machines and public writeups.</p>
 
+        <div class="lab-actions">
+          <a href="https://github.com/Ishan-113/pentest-writeups" target="_blank" class="proj-btn proj-btn-github">
+            <svg viewBox="0 0 24 24"><path d="M10 4H2v16h20V6H12l-2-2zm0 2l2 2h8v10H4V6h6z"/></svg>
+            View Writeups
+          </a>
+        </div>
+
+        <div class="resume-card-grid">
         <div class="project-block">
           <div class="project-block-header">
             <div class="project-block-name">🖥️ Home Lab — Metasploitable2 & DVWA</div>
@@ -645,6 +676,7 @@
             <li>Completed TryHackMe Guided Pentest Web and Infrastructure paths at 100%</li>
             <li>Rooted HTB machines including Meow, Fawn, Dancing, Redeemer, Appointment, Sequel, Crocodile, Responder and Cap</li>
           </ul>
+        </div>
         </div>
 
         <div class="lab-pills">
