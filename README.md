@@ -35,8 +35,8 @@ It highlights:
 | Expense Tracker | localStorage, filters, dynamic totals | [Live](https://expense-tracker-peach-three-29.vercel.app/) | [GitHub](https://github.com/Ishan-113/expense-tracker) |
 | Blackjack Game | Card game logic and interactive UI | [Live](https://blackjack-alpha-wine.vercel.app/) | [GitHub](https://github.com/Ishan-113/blackjack) |
 | GoT Lore Map | Interactive map and lore compendium | [Live](https://go-t-lore-map.vercel.app/) | [GitHub](https://github.com/Ishan-113/GoT-Lore-Map) |
-| Pentest Cheatsheet Terminal | Kali-style command reference UI | [pentest-cheatsheet-tau.vercel.app](https://pentest-cheatsheet-tau.vercel.app/) | [GitHub](https://github.com/Ishan-113/Pentest_cheatsheet) |
-| This Portfolio | Responsive portfolio, animations, resume page | [Live](https://portfolio-ishan-1224.vercel.app/) | [GitHub](https://github.com/Ishan-113/portfolio) |
+| Pentest Cheatsheet Terminal | Kali-style command reference UI | [Live](https://pentest-cheatsheet-tau.vercel.app/) | [GitHub](https://github.com/Ishan-113/Pentest_cheatsheet) |
+| This Portfolio | Responsive portfolio, animations, resume page | [Live](https://portfolio-ishanp.vercel.app/) | [GitHub](https://github.com/Ishan-113/portfolio) |
 
 ## Cybersecurity Lab
 
@@ -125,4 +125,4 @@ Made by Ishan Prajapati.
 
 - GitHub: [github.com/Ishan-113](https://github.com/Ishan-113)
 - LinkedIn: [linkedin.com/in/ishan-prajapati-607b953b5](https://linkedin.com/in/ishan-prajapati-607b953b5)
-- Portfolio: [portfolio-ishan-1224.vercel.app](https://portfolio-ishan-1224.vercel.app)
+- Portfolio: [portfolio-ishan-1224.vercel.app](https://portfolio-ishanp.vercel.app/)
