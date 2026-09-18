@@ -425,28 +425,30 @@
         <div class="skill-name">Languages</div>
         <div class="skill-tags">
           <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
           <span class="skill-tag">HTML5</span>
           <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">C</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">C++</span>
+          <span class="skill-tag">C/C++</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-name">Tools</div>
+        <div class="skill-name">Frontend</div>
         <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Vercel</span>
+          <span class="skill-tag">React 19</span>
+          <span class="skill-tag">Tailwind</span>
+          <span class="skill-tag">Vite</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-name">Learning</div>
+        <div class="skill-name">Backend & DB</div>
         <div class="skill-tags">
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Cybersecurity</span>
+          <span class="skill-tag">Node + Express</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Supabase</span>
         </div>
       </div>
       <div class="skill-row">
@@ -456,6 +458,7 @@
           <span class="skill-tag">Nmap</span>
           <span class="skill-tag">Metasploit</span>
           <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">JWT</span>
           <span class="skill-tag">John</span>
         </div>
       </div>
@@ -486,7 +489,7 @@
 
       <div class="m-section">
         <div class="m-label">Profile</div>
-        <p class="profile-text">Computer Engineering student with a 9.04 SGPA and a passion for building real-world technology solutions. Self-taught in web development — built and deployed six live projects. On the security side, I run a Kali Linux home lab, complete guided pentests, root HackTheBox machines and document exploit chains in public writeups.</p>
+        <p class="profile-text">Computer Engineering student (SGPA 9.04) obsessed with the build → break → secure loop. Self-taught from HTML/CSS/JS to React, Python, Java + Spring Boot — 12 live projects on Vercel/Render using JWT, MongoDB, MySQL & Supabase. In parallel, I run a Kali Linux home lab (VMware + Metasploitable2 + DVWA), complete TryHackMe at 100% and root HackTheBox machines, documenting every chain in public writeups.</p>
       </div>
 
       <div class="m-section">
@@ -510,135 +513,165 @@
       </div>
 
       <div class="m-section">
-        <div class="m-label">Projects</div>
+        <div class="m-label">Projects — Featured</div>
 
         <div class="resume-card-grid">
+        <!-- Wastewise -->
         <div class="project-block">
           <div class="project-block-header">
-            <div class="project-block-name">🌤️ Weather App</div>
+            <div class="project-block-name">♻️ WasteWise — Recycle. Earn. Repeat.</div>
             <div class="project-block-links">
-              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/weather-app" target="_blank" class="proj-btn proj-btn-github">
+              <a href="https://github.com/Ishan-113/Wastewise" target="_blank" class="proj-btn proj-btn-github">
                 <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
                 GitHub
               </a>
             </div>
           </div>
-          <div class="project-stack">HTML · CSS · JavaScript · REST API · async/await</div>
+          <div class="project-stack">Java 17 · Spring Boot 3.3 · MySQL · JWT · HTML/CSS/JS</div>
           <ul class="project-points">
-            <li>Integrated OpenWeatherMap API using fetch() and async/await for real-time weather data</li>
-            <li>Features city search, temperature, humidity, wind speed and dynamic weather icons</li>
-            <li>Implemented error handling with try/catch and glassmorphism UI</li>
+            <li>Smart recycling rewards: QR scan → drop waste → earn points + gamified impact counters</li>
+            <li>BCrypt + JWT auth, MySQL Workbench 8.0, CORS-secured Spring API</li>
+          </ul>
+        </div>
+
+        <!-- Artify -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🎨 Artify — Where Creativity Comes to Life</div>
+            <div class="project-block-links">
+              <a href="https://artify-5g0q.onrender.com" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/Artify" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">JavaScript · Node/Express · Render · Gallery · Portfolio</div>
+          <ul class="project-points">
+            <li>Cinematic video hero + searchable gallery with category filters (Digital/Illustration/Photo/3D)</li>
+            <li>Artist portfolios with shareable handles (artify.studio/your-handle)</li>
+          </ul>
+        </div>
+
+        <!-- SkillAlign -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">📊 SkillAlign — SIH PS 26134</div>
+            <div class="project-block-links">
+              <a href="https://skill-align-nu.vercel.app" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/SkillAlign" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">Python · FastAPI · MongoDB/SQLite · SIH 2026</div>
+          <ul class="project-points">
+            <li>SIH 2026 Govt. of Maharashtra — maps job-market skill gaps vs curriculum</li>
+            <li>Endpoints: /api/skills, /api/experience/salary, /api/locations, insights report</li>
+          </ul>
+        </div>
+
+        <!-- AGROSAFE -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🌿 AGROSAFE — Crop Diagnosis</div>
+            <div class="project-block-links">
+              <a href="https://agrosafe-tawny.vercel.app" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/AGROSAFE" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">React 19 · Tailwind 4 · Python FastAPI · Supabase</div>
+          <ul class="project-points">
+            <li>AI crop-health diagnosis with training pipeline v3 + FastAPI Uvicorn on Render</li>
+            <li>Vite + React frontend with health-check and Supabase integration</li>
+          </ul>
+        </div>
+
+        <!-- Secure Login -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🔐 Secure Login App</div>
+            <div class="project-block-links">
+              <a href="https://secure-login-app-teal.vercel.app" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/secure-login-app" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">React · Vite · Tailwind · Express · MongoDB · JWT</div>
+          <ul class="project-points">
+            <li>Full-stack auth: registration, login, protected dashboard, logout, show/hide password</li>
+            <li>JWT + bcrypt, Vercel frontend + Render API</li>
+          </ul>
+        </div>
+
+        <!-- InternGuard -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🛡️ InternGuard AI</div>
+            <div class="project-block-links">
+              <a href="https://internguard-ai.vercel.app" target="_blank" class="proj-btn proj-btn-live">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/Ishan-113/internguard-ai" target="_blank" class="proj-btn proj-btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-stack">JavaScript · AI Risk Scoring · Vercel</div>
+          <ul class="project-points">
+            <li>Paste internship email → 0–100 risk + red flags / trust signals + safe next steps</li>
+            <li>Generates verification reply template to confirm “no payment required”</li>
+          </ul>
+        </div>
+
+        <!-- Weather + GoT compact -->
+        <div class="project-block">
+          <div class="project-block-header">
+            <div class="project-block-name">🌤️ Weather App · 💰 Expense Tracker</div>
+            <div class="project-block-links">
+              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank" class="proj-btn proj-btn-live">Live</a>
+              <a href="https://github.com/Ishan-113/weather-app" target="_blank" class="proj-btn proj-btn-github">GitHub</a>
+            </div>
+          </div>
+          <div class="project-stack">REST API · async/await · localStorage · Vercel</div>
+          <ul class="project-points">
+            <li>Weather: OpenWeatherMap fetch, city search, humidity/wind, dynamic icons</li>
+            <li>Expense: filters, real-time totals, localStorage persistence</li>
           </ul>
         </div>
 
         <div class="project-block">
           <div class="project-block-header">
-            <div class="project-block-name">💰 Expense Tracker</div>
+            <div class="project-block-name">⚔️ GoT Lore Map · 🖥️ Pentest Cheatsheet</div>
             <div class="project-block-links">
-              <a href="https://expense-tracker-peach-three-29.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/expense-tracker" target="_blank" class="proj-btn proj-btn-github">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
+              <a href="https://go-t-lore-map.vercel.app/" target="_blank" class="proj-btn proj-btn-live">Live</a>
+              <a href="https://github.com/Ishan-113/GoT-Lore-Map" target="_blank" class="proj-btn proj-btn-github">GitHub</a>
             </div>
           </div>
-          <div class="project-stack">HTML · CSS · JavaScript · localStorage</div>
+          <div class="project-stack">Interactive Map · Terminal UI · Pentesting · Vercel</div>
           <ul class="project-points">
-            <li>Built expense tracker with category filters, real-time totals and persistent localStorage</li>
-            <li>Used array methods (filter, reduce) and DOM manipulation for dynamic rendering</li>
-            <li>Clean monospace UI with animated expense cards and category filter pills</li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-header">
-            <div class="project-block-name">🃏 Blackjack Game</div>
-            <div class="project-block-links">
-              <a href="https://blackjack-alpha-wine.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/blackjack" target="_blank" class="proj-btn proj-btn-github">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-stack">HTML · CSS · JavaScript</div>
-          <ul class="project-points">
-            <li>Card game with real suit symbols (♠♥♦♣), bust detection and win logic</li>
-            <li>Dynamic chip betting system with score tracking (+$10 win / -$10 loss)</li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-header">
-            <div class="project-block-name">⚔️ GoT Lore Map</div>
-            <div class="project-block-links">
-              <a href="https://go-t-lore-map.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/GoT-Lore-Map" target="_blank" class="proj-btn proj-btn-github">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-stack">HTML · CSS · JavaScript · Interactive Map</div>
-          <ul class="project-points">
-            <li>Interactive lore compendium for Game of Thrones with an explorable map of the Known World</li>
-            <li>Features character archives, house encyclopaedia and searchable lore database</li>
-            <li>Built with vanilla JS, custom map rendering and dynamic content loading</li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-header">
-            <div class="project-block-name">🖥️ Pentest Cheatsheet Terminal</div>
-            <div class="project-block-links">
-              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank" class="proj-btn proj-btn-github">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-stack">HTML · CSS · JavaScript · Pentesting · Linux</div>
-          <ul class="project-points">
-            <li>Built a Kali-style browser terminal for quick pentesting command reference</li>
-            <li>Covers nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linpeas, ffuf and scp</li>
-          </ul>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-header">
-            <div class="project-block-name">✨ This Portfolio</div>
-            <div class="project-block-links">
-              <a href="https://portfolio-ishan-1224.vercel.app/" target="_blank" class="proj-btn proj-btn-live">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                Live Demo
-              </a>
-              <a href="https://github.com/Ishan-113/portfolio" target="_blank" class="proj-btn proj-btn-github">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-stack">HTML · CSS · JavaScript · Responsive Design · Animation</div>
-          <ul class="project-points">
-            <li>Built a responsive portfolio with scroll-triggered reveals, custom cursor and animated cards</li>
-            <li>Added a dedicated cybersecurity lab section and recruiter-friendly project presentation</li>
+            <li>GoT: explorable Known World, character & house encyclopaedia</li>
+            <li>Pentest: Kali terminal for nmap, sqlmap, hydra, msfconsole, john, ffuf</li>
           </ul>
         </div>
         </div>
@@ -697,7 +730,7 @@
         </div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>
-          <div class="achieve-text">Self-taught — built and deployed <strong>6 live web projects</strong> from scratch</div>
+          <div class="achieve-text">Self-taught — built and deployed <strong>12 live projects</strong> (React, Python, Java + vanilla JS) from scratch</div>
         </div>
         <div class="achieve-item">
           <div class="achieve-dot"></div>

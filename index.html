@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Ishan Prajapati Portfolio - Web Developer & Cybersecurity Enthusiast">
-<meta name="keywords" content="Portfolio, Web Developer, Cybersecurity, JavaScript">
-<meta name="author" content="Ishan Prajapati">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ishan Prajapati — Computer Engineering Student, Full-Stack Developer & Cybersecurity Enthusiast. 12 live projects across React, Python, Java and security labs."/>
+  <meta name="keywords" content="Ishan Prajapati, Portfolio, Web Developer, Full Stack, Cybersecurity, React, Python, JavaScript"/>
+  <meta name="author" content="Ishan Prajapati"/>
   <title>Ishan Prajapati — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- Nav -->
-  <nav>
-    <div class="nav-logo">IP</div>
-    <div class="nav-links">
+  <nav id="navbar">
+    <a href="#home" class="nav-logo" aria-label="Home">IP</a>
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -24,74 +26,80 @@
       <a href="#contact">Contact</a>
       <a href="resume.html" class="nav-resume">Resume →</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero-bg">
+    <div class="hero-bg" aria-hidden="true">
       <div class="blob blob1"></div>
       <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
       <div class="grid-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-tag">Available for opportunities</div>
-      <h1 class="hero-name">Ishan<br/><span>Prajapati</span></h1>
-      <p class="hero-title">Computer Engineering Student<br/>
-        <span class="typed">Cybersecurity Enthusiast & Web Developer</span>
+      <div class="hero-tag reveal">Available for internships & collaborations</div>
+      <h1 class="hero-name reveal">Ishan<br/><span>Prajapati</span></h1>
+      <p class="hero-title reveal">Computer Engineering Student<br/>
+        <span class="typed">Full-Stack Developer & Cybersecurity Enthusiast</span>
       </p>
-      <p class="hero-desc">Building real-world projects at the intersection of web development and cybersecurity. Based in Mumbai, India.</p>
-      <div class="hero-btns">
+      <p class="hero-desc reveal">I build real-world products — from React + FastAPI platforms to Java Spring Boot systems — and break them in authorized security labs. Based in Mumbai, India.</p>
+      <div class="hero-btns reveal">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="resume.html" class="btn-secondary">View Resume</a>
+        <a href="https://github.com/Ishan-113" target="_blank" rel="noopener" class="btn-ghost">GitHub ↗</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span>6</span><p>Live Projects</p></div>
+      <div class="hero-stats reveal" id="heroStats">
+        <div class="stat"><span data-count="12">0</span><p>Live Projects</p></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span>9.04</span><p>SGPA</p></div>
+        <div class="stat"><span data-count="9.04" data-decimal="true">0.00</span><p>SGPA</p></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span>3</span><p>Certifications</p></div>
+        <div class="stat"><span data-count="14">0</span><p>GitHub Repos</p></div>
       </div>
     </div>
-    <div class="hero-scroll">scroll down ↓</div>
+    <div class="hero-scroll">scroll ↓</div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-tag">01 — About</div>
+      <div class="section-tag reveal">01 — About</div>
       <div class="about-grid">
         <div class="about-left">
-          <h2 class="section-title">A developer who<br/>thinks like a hacker.</h2>
-          <p>I'm a Computer Engineering student at Thakur Shree DPS College of Engineering, Mumbai, with a strong academic record (9.04 SGPA). I'm passionate about two things: building clean web applications and understanding how systems can be secured.</p>
-          <p>I taught myself web development from scratch — building and deploying real projects with HTML, CSS, JavaScript, and REST APIs. On the security side, I've moved past theory into hands-on practice: running a Kali Linux home lab, completing guided pentests on TryHackMe, and rooting machines on HackTheBox — every exploit chain documented and pushed to GitHub.</p>
-          <div class="about-links">
-            <a href="https://github.com/Ishan-113" target="_blank">GitHub ↗</a>
-            <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank">LinkedIn ↗</a>
+          <h2 class="section-title reveal">A developer who<br/>thinks like a hacker.</h2>
+          <p class="reveal">I'm a Computer Engineering student at Thakur Shree DPS College of Engineering, Mumbai (SGPA 9.04). I taught myself web development and went from vanilla JS to React, Node, Python and Java — deploying 12 live projects on Vercel and Render.</p>
+          <p class="reveal">What drives me is the build → break → secure loop: I ship features with JWT, MongoDB & Supabase, then test them in my Kali Linux home lab (VMware + Metasploitable2 + DVWA). Every exploit chain is documented in a public writeups repo.</p>
+          <div class="about-links reveal">
+            <a href="https://github.com/Ishan-113" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://portfolio-ishan-1224.vercel.app" target="_blank" rel="noopener">Portfolio ↗</a>
           </div>
         </div>
         <div class="about-right">
-          <div class="about-card">
+          <div class="about-card reveal">
             <div class="about-card-icon">🎓</div>
             <div class="about-card-text">
               <h4>Education</h4>
               <p>B.E. Computer Engineering<br/>Semester 2 — SGPA 9.04</p>
             </div>
           </div>
-          <div class="about-card">
+          <div class="about-card reveal">
             <div class="about-card-icon">📍</div>
             <div class="about-card-text">
               <h4>Location</h4>
               <p>Mumbai, Maharashtra<br/>India</p>
             </div>
           </div>
-          <div class="about-card">
+          <div class="about-card reveal">
             <div class="about-card-icon">🎯</div>
             <div class="about-card-text">
               <h4>Focus</h4>
-              <p>Cybersecurity & Full Stack<br/>Web Development</p>
+              <p>Full-Stack · AI Tools<br/>Cybersecurity</p>
             </div>
           </div>
-          <div class="about-card">
+          <div class="about-card reveal">
             <div class="about-card-icon">📧</div>
             <div class="about-card-text">
               <h4>Email</h4>
@@ -106,103 +114,220 @@
   <!-- Projects -->
   <section class="section section-dark" id="projects">
     <div class="container">
-      <div class="section-tag">02 — Projects</div>
-      <h2 class="section-title">Things I've built.</h2>
-      <div class="projects-grid">
+      <div class="section-tag reveal">02 — Projects</div>
+      <h2 class="section-title reveal">Things I've built.</h2>
+      <p class="section-sub reveal">12 live projects — full-stack, AI-powered and security-focused. Newest first.</p>
 
-        <div class="project-card">
+      <div class="project-filters reveal" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="ai">AI & Data</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- 01 Wastewise — Full Stack Java -->
+        <div class="project-card reveal featured" data-category="fullstack">
           <div class="project-header">
-            <div class="project-num">01</div>
+            <div class="project-num">01 <span class="featured-badge">Featured</span></div>
             <div class="project-links">
-              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/weather-app" target="_blank">GitHub ↗</a>
+              <a href="https://github.com/Ishan-113/Wastewise" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">♻️</div>
+          <h3>WasteWise — Recycle. Earn. Repeat.</h3>
+          <p>Smart recycling rewards platform: scan QR, drop waste, earn points. Frontend HTML/CSS/JS + Java 17 Spring Boot 3.3 + MySQL (BCrypt + JWT) + gamified impact counters.</p>
+          <div class="project-tags">
+            <span>Java</span><span>Spring Boot</span><span>MySQL</span><span>JWT</span><span>HTML/CSS/JS</span>
+          </div>
+        </div>
+
+        <!-- 02 Artify -->
+        <div class="project-card reveal featured" data-category="fullstack frontend">
+          <div class="project-header">
+            <div class="project-num">02 <span class="featured-badge">Featured</span></div>
+            <div class="project-links">
+              <a href="https://artify-5g0q.onrender.com" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/Artify" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">🎨</div>
+          <h3>Artify — Where Creativity Comes to Life</h3>
+          <p>Digital art & portfolio platform with cinematic video hero, searchable gallery, category filters, artist portfolios and shareable profile links (artify.studio/your-handle).</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>Node.js</span><span>Express</span><span>Render</span><span>Portfolio</span>
+          </div>
+        </div>
+
+        <!-- 03 SkillAlign — SIH 2026 -->
+        <div class="project-card reveal featured" data-category="ai fullstack">
+          <div class="project-header">
+            <div class="project-num">03 <span class="featured-badge">SIH 2026</span></div>
+            <div class="project-links">
+              <a href="https://skill-align-nu.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/SkillAlign" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">📊</div>
+          <h3>SkillAlign — SIH PS 26134</h3>
+          <p>Smart India Hackathon 2026 (Govt. of Maharashtra): bridges education-industry skill gap with FastAPI + MongoDB/SQLite analysis of job trends, salary vs experience & location insights.</p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>MongoDB</span><span>SIH 2026</span><span>Data Viz</span>
+          </div>
+        </div>
+
+        <!-- 04 AGROSAFE -->
+        <div class="project-card reveal featured" data-category="ai fullstack">
+          <div class="project-header">
+            <div class="project-num">04 <span class="featured-badge">Featured</span></div>
+            <div class="project-links">
+              <a href="https://agrosafe-tawny.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/AGROSAFE" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">🌿</div>
+          <h3>AGROSAFE — Crop Diagnosis</h3>
+          <p>AI crop-health diagnosis: React 19 + Tailwind 4 frontend + Python FastAPI diagnosis API + Supabase. Uvicorn on Render with health-check and model pipeline.</p>
+          <div class="project-tags">
+            <span>React 19</span><span>Tailwind</span><span>Python</span><span>FastAPI</span><span>Supabase</span>
+          </div>
+        </div>
+
+        <!-- 05 Secure Login App -->
+        <div class="project-card reveal" data-category="fullstack security">
+          <div class="project-header">
+            <div class="project-num">05</div>
+            <div class="project-links">
+              <a href="https://secure-login-app-teal.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/secure-login-app" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">🔐</div>
+          <h3>Secure Login App</h3>
+          <p>Full-stack auth with React + Vite + Tailwind, Node/Express, MongoDB, JWT & bcrypt. Protected dashboard, show/hide password and Render + Vercel deploy.</p>
+          <div class="project-tags">
+            <span>React</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span>
+          </div>
+        </div>
+
+        <!-- 06 InternGuard AI -->
+        <div class="project-card reveal" data-category="ai security">
+          <div class="project-header">
+            <div class="project-num">06</div>
+            <div class="project-links">
+              <a href="https://internguard-ai.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/internguard-ai" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-icon">🛡️</div>
+          <h3>InternGuard AI</h3>
+          <p>Internship email risk analyzer: paste any offer email, get 0–100 risk score, red flags vs trust signals, tailored next steps and a ready-to-send verification reply.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>AI</span><span>Risk Scoring</span><span>Vercel</span>
+          </div>
+        </div>
+
+        <!-- 07 Weather App -->
+        <div class="project-card reveal" data-category="frontend">
+          <div class="project-header">
+            <div class="project-num">07</div>
+            <div class="project-links">
+              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/weather-app" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">🌤️</div>
           <h3>Weather App</h3>
-          <p>Real-time weather app using OpenWeatherMap REST API. Features city search, temperature, humidity, wind speed and dynamic weather icons.</p>
+          <p>Real-time weather via OpenWeatherMap REST API: city search, temperature, humidity, wind and dynamic icons with async/await + error handling.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span><span>async/await</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- 08 Expense Tracker -->
+        <div class="project-card reveal" data-category="frontend">
           <div class="project-header">
-            <div class="project-num">02</div>
+            <div class="project-num">08</div>
             <div class="project-links">
-              <a href="https://expense-tracker-peach-three-29.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/expense-tracker" target="_blank">GitHub ↗</a>
+              <a href="https://expense-tracker-ishan-1224.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/expense-tracker" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">💰</div>
           <h3>Expense Tracker</h3>
-          <p>Clean expense tracking app with category filters, real-time totals and persistent storage using localStorage.</p>
+          <p>Clean tracker with category filters, real-time totals, persistent localStorage and animated monospace UI.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span>
+            <span>JavaScript</span><span>localStorage</span><span>CSS</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- 09 Blackjack -->
+        <div class="project-card reveal" data-category="frontend">
           <div class="project-header">
-            <div class="project-num">03</div>
+            <div class="project-num">09</div>
             <div class="project-links">
-              <a href="https://blackjack-alpha-wine.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/blackjack" target="_blank">GitHub ↗</a>
+              <a href="https://blackjack-alpha-wine.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/blackjack" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">🃏</div>
           <h3>Blackjack Game</h3>
-          <p>Fully functional Blackjack card game with real suit symbols, bust detection, win logic and a dynamic chip betting system.</p>
+          <p>Playable Blackjack with real suits, bust detection, win logic and chip betting system.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>JavaScript</span><span>Game Logic</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- 10 GoT Lore Map -->
+        <div class="project-card reveal" data-category="frontend">
           <div class="project-header">
-            <div class="project-num">04</div>
+            <div class="project-num">10</div>
             <div class="project-links">
-              <a href="https://go-t-lore-map.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/GoT-Lore-Map" target="_blank">GitHub ↗</a>
+              <a href="https://go-t-lore-map.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/GoT-Lore-Map" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">⚔️</div>
           <h3>GoT Lore Map</h3>
-          <p>An interactive Game of Thrones lore compendium featuring an explorable map of the Known World, character archives and house encyclopaedia.</p>
+          <p>Interactive Known World map with character archives and house encyclopaedia for Game of Thrones lore.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Interactive Map</span>
+            <span>Interactive Map</span><span>JavaScript</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- 11 Pentest Cheatsheet -->
+        <div class="project-card reveal" data-category="security frontend">
           <div class="project-header">
-            <div class="project-num">05</div>
+            <div class="project-num">11</div>
             <div class="project-links">
-              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank">GitHub ↗</a>
+              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">🖥️</div>
           <h3>Pentest Cheatsheet Terminal</h3>
-          <p>A browser-based Kali-style terminal interface for quick command reference during engagements — covers nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linpeas, ffuf and scp.</p>
+          <p>Kali-style browser terminal for nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linPEAS, ffuf & scp.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Pentesting</span><span>Linux</span>
+            <span>Pentesting</span><span>Linux</span><span>Terminal UI</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- 12 Portfolio -->
+        <div class="project-card reveal" data-category="frontend">
           <div class="project-header">
-            <div class="project-num">06</div>
+            <div class="project-num">12</div>
             <div class="project-links">
-              <a href="https://portfolio-ishan-1224.vercel.app/" target="_blank">Live ↗</a>
-              <a href="https://github.com/Ishan-113/portfolio" target="_blank">GitHub ↗</a>
+              <a href="https://portfolio-ishan-1224.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/portfolio" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="project-icon">✨</div>
           <h3>This Portfolio</h3>
-          <p>The site you're on right now — built from scratch with a custom cursor system, scroll-triggered reveals, 3D card tilt and a fully responsive mobile layout.</p>
+          <p>Custom cursor, scroll reveals, 3D tilt, responsive layout and 12 projects — built with vanilla HTML/CSS/JS.</p>
           <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Animation</span>
+            <span>Responsive</span><span>Animations</span><span>Accessibility</span>
           </div>
         </div>
 
@@ -213,74 +338,76 @@
   <!-- Skills -->
   <section class="section" id="skills">
     <div class="container">
-      <div class="section-tag">03 — Skills</div>
-      <h2 class="section-title">What I work with.</h2>
+      <div class="section-tag reveal">03 — Skills</div>
+      <h2 class="section-title reveal">What I work with.</h2>
       <div class="skills-grid">
-        <div class="skill-group">
+        <div class="skill-group reveal">
           <h4>Languages</h4>
           <div class="skill-items">
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>JavaScript</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>Python</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/>Java</div>
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/>HTML5</div>
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/>CSS3</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>JavaScript</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/>C</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>Python</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/>C++</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/>C / C++</div>
           </div>
         </div>
-        <div class="skill-group">
-          <h4>Tools & Platforms</h4>
+        <div class="skill-group reveal">
+          <h4>Frontend</h4>
           <div class="skill-items">
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/>React 19</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"/>Tailwind CSS</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite"/>Vite</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"/>Responsive UI</div>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Backend & Data</h4>
+          <div class="skill-items">
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>Node + Express</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"/>FastAPI</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"/>Spring Boot</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/>MongoDB · MySQL</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase"/>Supabase</div>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Security & Tools</h4>
+          <div class="skill-items">
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"/>Kali Linux · Nmap</div>
+            <div class="skill-item">Burp Suite · Metasploit</div>
+            <div class="skill-item">JWT · bcrypt · Auth</div>
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>Git & GitHub</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" style="filter:invert(1)"/>Vercel</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"/>VS Code</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>Node.js</div>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Concepts</h4>
-          <div class="skill-items">
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="REST API" style="filter:invert(0.6) sepia(1) saturate(3) hue-rotate(190deg)"/>REST APIs</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="localStorage"/>localStorage</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Networking"/>Networking</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original.svg" alt="Cybersecurity" style="filter:invert(0.6) sepia(1) saturate(3) hue-rotate(190deg)"/>Cybersecurity</div>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Learning</h4>
-          <div class="skill-items">
-            <div class="skill-item learning"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/>React.js</div>
-            <div class="skill-item learning"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" style="filter:invert(1)"/>Node.js + Express</div>
-            <div class="skill-item learning"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Databases"/>Databases</div>
-            <div class="skill-item learning"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg" alt="Ethical Hacking"/>Ethical Hacking</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" style="filter:invert(1)"/>Vercel · Render</div>
           </div>
         </div>
       </div>
 
       <!-- Certifications -->
-      <div class="certs">
+      <div class="certs reveal">
         <h4>Certifications</h4>
         <div class="certs-grid">
-          <a class="cert-card" href="https://www.credly.com/badges/1be4bca6-f42c-42bf-88e2-a6bc66905e0d/public_url" target="_blank" style="text-decoration:none;color:inherit;">
+          <a class="cert-card" href="https://www.credly.com/badges/1be4bca6-f42c-42bf-88e2-a6bc66905e0d/public_url" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
             <div class="cert-logo">🏛️</div>
             <div>
               <h5>Introduction to Cybersecurity</h5>
-              <p>Cisco Networking Academy — Verified Badge</p>
+              <p>Cisco Networking Academy — Verified</p>
             </div>
             <div class="cert-badge">✓ Verified</div>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/a7fa92ae-b0f7-4a75-a039-a1db6ab6cb23/public_url" target="_blank" style="text-decoration:none;color:inherit;">
+          <a class="cert-card" href="https://www.credly.com/badges/a7fa92ae-b0f7-4a75-a039-a1db6ab6cb23/public_url" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
             <div class="cert-logo">🏛️</div>
             <div>
               <h5>Networking Basics</h5>
-              <p>Cisco Networking Academy — Verified Badge</p>
+              <p>Cisco Networking Academy — Verified</p>
             </div>
             <div class="cert-badge">✓ Verified</div>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/d5253e7c-0d93-44e0-94ad-777a3e38d21d/public_url" target="_blank" style="text-decoration:none;color:inherit;">
+          <a class="cert-card" href="https://www.credly.com/badges/d5253e7c-0d93-44e0-94ad-777a3e38d21d/public_url" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
             <div class="cert-logo">🏛️</div>
             <div>
               <h5>Operating Systems Basics</h5>
-              <p>Cisco Networking Academy — Verified Badge</p>
+              <p>Cisco Networking Academy — Verified</p>
             </div>
             <div class="cert-badge">✓ Verified</div>
           </a>
@@ -292,24 +419,24 @@
   <!-- Cybersecurity Lab -->
   <section class="section section-dark" id="cyberlab">
     <div class="container">
-      <div class="section-tag">04 — Cybersecurity Lab</div>
-      <h2 class="section-title">Hands-on hacking, not just theory.</h2>
-      <p class="cyberlab-desc">Alongside web development, I run a Kali Linux home lab on VMware and work through guided and unguided penetration testing labs — documenting every exploit chain in a public writeups repo.</p>
+      <div class="section-tag reveal">04 — Cybersecurity Lab</div>
+      <h2 class="section-title reveal">Hands-on hacking, not just theory.</h2>
+      <p class="cyberlab-desc reveal">Kali Linux home lab on VMware + Metasploitable2/DVWA + TryHackMe & HackTheBox — every exploit chain documented in a public writeups repo.</p>
 
       <div class="cyberlab-grid">
-        <div class="cyber-card">
+        <div class="cyber-card reveal">
           <div class="cyber-card-icon">🖥️</div>
           <h4>Home Lab — Metasploitable2 & DVWA</h4>
-          <p>Kali Linux 2026.1 (VMware) + Metasploitable2. Exploited vsftpd 2.3.4 (CVE-2011-2523) and Samba usermap_script (CVE-2007-2447) via Metasploit for a root shell, then cracked 6/7 password hashes with John the Ripper. Also ran a manual pentest on DVWA — UNION-based SQLi, OS command injection and SUID nmap privilege escalation.</p>
+          <p>Kali 2026.1 (VMware) + Metasploitable2. Exploited vsftpd 2.3.4 (CVE-2011-2523) and Samba usermap_script (CVE-2007-2447) via Metasploit for root shell, cracked 6/7 hashes with John. Manual DVWA: UNION SQLi, command injection, SUID nmap privesc.</p>
         </div>
-        <div class="cyber-card">
+        <div class="cyber-card reveal">
           <div class="cyber-card-icon">🎯</div>
           <h4>TryHackMe — Guided Pentests</h4>
-          <p>Completed both Guided Pentest paths — Web and Infrastructure — at 100%. Covered IDOR, file upload bypass, RCE, reverse shells, UnrealIRCD backdoor exploitation via Metasploit, and root privilege escalation.</p>
+          <p>Both Guided Pentest paths — Web and Infra — at 100%. IDOR, file upload bypass, RCE, reverse shells, UnrealIRCD backdoor via Metasploit, and root privilege escalation.</p>
         </div>
       </div>
 
-      <div class="htb-block">
+      <div class="htb-block reveal">
         <h4>HackTheBox — Machines Rooted</h4>
         <div class="htb-grid">
           <span class="htb-pill">Meow</span>
@@ -324,28 +451,28 @@
         </div>
       </div>
 
-      <a href="https://github.com/Ishan-113/pentest-writeups" target="_blank" class="cyber-writeups-link">📁 View all writeups on GitHub ↗</a>
+      <a href="https://github.com/Ishan-113/pentest-writeups" target="_blank" rel="noopener" class="cyber-writeups-link reveal">📁 View all writeups on GitHub ↗</a>
     </div>
   </section>
 
   <!-- Contact -->
   <section class="section" id="contact">
     <div class="container">
-      <div class="section-tag">05 — Contact</div>
-      <h2 class="section-title">Let's connect.</h2>
-      <p class="contact-desc">I'm always open to new opportunities, collaborations or just a good tech conversation. Feel free to reach out!</p>
+      <div class="section-tag reveal">05 — Contact</div>
+      <h2 class="section-title reveal">Let's connect.</h2>
+      <p class="contact-desc reveal">Open to internships, collaborations or a good tech chat — reach out!</p>
       <div class="contact-grid">
-        <a href="mailto:ishanprajapati12112007@gmail.com" class="contact-card">
+        <a href="mailto:ishanprajapati12112007@gmail.com" class="contact-card reveal">
           <div class="contact-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" style="width:32px;height:32px"/></div>
           <h4>Email</h4>
           <p>ishanprajapati12112007@gmail.com</p>
         </a>
-        <a href="https://github.com/Ishan-113" target="_blank" class="contact-card">
+        <a href="https://github.com/Ishan-113" target="_blank" rel="noopener" class="contact-card reveal">
           <div class="contact-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:32px;height:32px;filter:invert(1)"/></div>
           <h4>GitHub</h4>
           <p>github.com/Ishan-113</p>
         </a>
-        <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank" class="contact-card">
+        <a href="https://linkedin.com/in/ishan-prajapati-607b953b5" target="_blank" rel="noopener" class="contact-card reveal">
           <div class="contact-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:32px;height:32px"/></div>
           <h4>LinkedIn</h4>
           <p>ishan-prajapati-607b953b5</p>
@@ -356,8 +483,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>Built by Ishan Prajapati — 2026</p>
-    <p>HTML · CSS · JavaScript</p>
+    <p>Built by Ishan Prajapati — 2026 · <span id="repoCount">14 repos</span> on GitHub</p>
+    <p>HTML · CSS · JavaScript — no frameworks</p>
   </footer>
 
   <script src="script.js"></script>
