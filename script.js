@@ -23,15 +23,6 @@ function onScroll() {
       $$('.nav-links a').forEach(a => {
         a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
       });
-
-      // blob parallax (desktop only)
-      if (!isTouch && !prefersReduced) {
-        const y = window.scrollY;
-        const b1 = $('.blob1'), b2 = $('.blob2'), b3 = $('.blob3');
-        if (b1) b1.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
-        if (b2) b2.style.transform = `translate3d(0, ${y * 0.08}px, 0)`;
-        if (b3) b3.style.transform = `translate3d(0, ${y * 0.05}px, 0)`;
-      }
       ticking = false;
     });
     ticking = true;
@@ -69,60 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => el.classList.add('visible'), 100 + i * 100);
   });
 
-  typeEffect();
-  initCounters();
   initTilt();
   initFilters();
   initContactHover();
 });
-
-// ===== Typing effect =====
-function typeEffect() {
-  const el = $('.typed');
-  if (!el || prefersReduced) return;
-  const full = el.textContent;
-  el.textContent = '';
-  el.style.borderRight = '2px solid #60a5fa';
-  let i = 0;
-  const t = setInterval(() => {
-    el.textContent += full[i++] ?? '';
-    if (i >= full.length) {
-      clearInterval(t);
-      setTimeout(() => { el.style.borderRight = 'none'; }, 600);
-    }
-  }, 38);
-}
-
-// ===== Counters =====
-function initCounters() {
-  const stats = $('#heroStats');
-  if (!stats) return;
-  const counters = $$('.stat span[data-count]');
-  let done = false;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !done) {
-        done = true;
-        counters.forEach(counter => {
-          const target = parseFloat(counter.dataset.count);
-          const isDecimal = counter.dataset.decimal === 'true';
-          let cur = 0;
-          const steps = 50;
-          const inc = target / steps;
-          let step = 0;
-          const timer = setInterval(() => {
-            step++;
-            cur += inc;
-            if (step >= steps) { cur = target; clearInterval(timer); }
-            counter.textContent = isDecimal ? cur.toFixed(2) : Math.floor(cur);
-          }, 18);
-        });
-        io.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-  io.observe(stats);
-}
 
 // ===== 3D Tilt (performant, rAF) =====
 function initTilt() {
@@ -198,15 +139,12 @@ if (!isTouch && !prefersReduced) {
 
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let rx = mx, ry = my;
-  let lx = 0, ly = 0;
   const LERP = 0.11;
 
   document.addEventListener('mousemove', (e) => {
     mx = e.clientX; my = e.clientY;
     dot.style.left = mx + 'px'; dot.style.top = my + 'px';
     glow.style.left = mx + 'px'; glow.style.top = my + 'px';
-    // trail throttled
-    if (Math.hypot(mx - lx, my - ly) > 22) { lx = mx; ly = my; spawnTrail(mx, my); }
   }, { passive: true });
 
   // hide when leaving window
@@ -222,10 +160,7 @@ if (!isTouch && !prefersReduced) {
   animate();
 
   // hover state
-  const hoverSel = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary, .cyber-card, .htb-pill, .filter-btn';
-  $$('.project-card, .about-card, .contact-card, .cert-card, .skill-item, .cyber-card, .htb-pill').forEach(el => {
-    // use delegation via existing elements; also handle dynamically
-  });
+  const hoverSel = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary, .cyber-card, .htb-pill, .filter-btn, .doc-card';
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverSel)) document.body.classList.add('cursor-hover');
   });
@@ -236,16 +171,6 @@ if (!isTouch && !prefersReduced) {
       if (!still || !still.closest(hoverSel)) document.body.classList.remove('cursor-hover');
     }
   });
-
-  function spawnTrail(x, y) {
-    const p = document.createElement('div');
-    p.className = 'cursor-trail';
-    const s = Math.random() * 4 + 3;
-    const hue = Math.random() > 0.5 ? 210 : 240;
-    p.style.cssText = `left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:hsla(${hue},100%,70%,0.65);box-shadow:0 0 ${s*2}px hsla(${hue},100%,70%,0.45)`;
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 550);
-  }
 }
 
 // ===== Mobile hamburger =====
