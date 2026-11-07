@@ -416,6 +416,8 @@ footer a:hover{text-decoration:underline}
 .hero .reveal{transform:translateY(16px)}
 
 /* ---------- Code card (warm charcoal — reads authored, not AI) ---------- */
+.hero-visual{display:flex;justify-content:center}
+.code-wrap{position:relative;width:100%;max-width:460px}
 .code-card{
   width:100%;max-width:460px;background:#241e14;border-radius:14px;
   overflow:hidden;padding-bottom:16px;border:1px solid rgba(255,255,255,.08);
@@ -450,10 +452,10 @@ footer a:hover{text-decoration:underline}
   box-shadow:var(--shadow-md);animation:floaty 5.5s ease-in-out infinite;
   white-space:nowrap;
 }
-.chip-1{top:-16px;right:2%;animation-delay:0s}
-.chip-2{bottom:44px;right:-8px;animation-delay:1.4s}
-.chip-3{top:40%;left:-16px;animation-delay:2.6s}
-.chip-4{bottom:-14px;left:8%;animation-delay:3.8s}
+.chip-1{top:-16px;right:-10px;animation-delay:0s}
+.chip-2{bottom:44px;right:-14px;animation-delay:1.4s}
+.chip-3{top:42%;left:-14px;animation-delay:2.6s}
+.chip-4{bottom:-16px;left:4%;animation-delay:3.8s}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 /* ---------- Responsive ---------- */
