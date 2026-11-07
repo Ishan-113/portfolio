@@ -12,8 +12,8 @@
   <meta property="og:description" content="Full-stack web projects, an ML-powered crop-health app, SIH 2026 build, and documented cybersecurity lab work."/>
   <meta property="og:url" content="https://portfolio-ishanp.vercel.app/"/>
   <meta name="twitter:card" content="summary"/>
-  <meta name="theme-color" content="#080c14"/>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080c14'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%2360a5fa' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
+  <meta name="theme-color" content="#f9f6ee"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
   <title>Ishan Prajapati — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -42,14 +42,9 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="blob blob1"></div>
-      <div class="blob blob2"></div>
-      <div class="blob blob3"></div>
-      <div class="grid-overlay"></div>
-    </div>
+    <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-tag reveal">Available for internships & collaborations</div>
+      <div class="hero-tag reveal">Available for internships &amp; collaborations</div>
       <h1 class="hero-name reveal">Ishan<br/><span>Prajapati</span></h1>
       <p class="hero-title reveal">Computer Engineering Student<br/>
         <span>Full-stack web projects, applied ML, and security lab practice</span>
@@ -68,6 +63,31 @@
         <a href="https://github.com/Ishan-113" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-head"><span class="code-dot d1"></span><span class="code-dot d2"></span><span class="code-dot d3"></span><span class="code-file">ishan.py</span></div>
+        <pre class="code-body"><span class="c-key">class</span> <span class="c-name">Ishan</span>:
+  <span class="c-key">role</span>  = <span class="c-str">"B.E. Computer Eng."</span>
+  <span class="c-key">base</span>  = <span class="c-str">"Mumbai, India"</span>
+  <span class="c-key">stack</span> = [<span class="c-str">"React"</span>, <span class="c-str">"FastAPI"</span>,
+             <span class="c-str">"Node"</span>, <span class="c-str">"Java"</span>]
+  <span class="c-key">focus</span> = [<span class="c-str">"Full-Stack"</span>, <span class="c-str">"ML"</span>,
+             <span class="c-str">"Cybersecurity"</span>]
+
+  <span class="c-com"># shipped, not just started</span>
+  builds = <span class="c-str">"4 live deployments"</span>
+
+  <span class="c-key">def</span> <span class="c-name">status</span>(<span class="c-key">self</span>):
+    <span class="c-key">return</span> <span class="c-str">"open to internships"</span>
+        </pre>
+      </div>
+      <div class="hero-chip chip-1">&#9881;&#65039; React 19</div>
+      <div class="hero-chip chip-2">&#127807; Spring Boot</div>
+      <div class="hero-chip chip-3">&#128013; FastAPI</div>
+      <div class="hero-chip chip-4">&#128737;&#65039; Kali Linux</div>
+    </div>
+  </div>
+
     <div class="hero-scroll">scroll ↓</div>
   </section>
 
@@ -121,43 +141,26 @@
   </section>
 
   <!-- Projects -->
-  <section class="section section-dark" id="projects">
+  <section class="section" id="projects">
     <div class="container">
       <div class="section-tag reveal">02 — Projects</div>
       <h2 class="section-title reveal">Things I've built.</h2>
-      <p class="section-sub reveal">Full-stack, ML-assisted and security-focused projects — newest first. Everything below links to its public repository; live demos are included where a deployment exists.</p>
+      <p class="section-sub reveal">Featured projects — full-stack, ML-assisted and security-focused. <a href="https://github.com/Ishan-113?tab=repositories" target="_blank" rel="noopener">View all on GitHub →</a></p>
 
       <div class="project-filters reveal" id="projectFilters">
-        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn active" data-filter="featured">Featured</button>
         <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-        <button class="filter-btn" data-filter="ai">AI & Data</button>
+        <button class="filter-btn" data-filter="ai">AI &amp; Data</button>
         <button class="filter-btn" data-filter="frontend">Frontend</button>
         <button class="filter-btn" data-filter="security">Security</button>
       </div>
 
       <div class="projects-grid" id="projectsGrid">
 
-        <!-- 01 InnoVate -->
-        <div class="project-card reveal featured" data-category="frontend fullstack">
-          <div class="project-header">
-            <div class="project-num">01 <span class="featured-badge">New</span></div>
-            <div class="project-links">
-              <a href="https://inno-vate-seven.vercel.app" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/InnoVate" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">💡</div>
-          <h3>InnoVate — E-Cell Challenge Dashboard</h3>
-          <p>Submission-monitoring dashboard for a college E-Cell innovation challenge: reads live Google Sheet responses (via Apps Script API or public sheet), tracks 125 slots across 5 domains × 25 problem statements, and shows VALID / DUPLICATE / FULL status without any second database.</p>
-          <div class="project-tags">
-            <span>React</span><span>Vite</span><span>Apps Script</span><span>Google Sheets</span>
-          </div>
-        </div>
-
-        <!-- 02 Wastewise — Full Stack Java -->
+        <!-- 01 Wastewise -->
         <div class="project-card reveal featured" data-category="fullstack">
           <div class="project-header">
-            <div class="project-num">02 <span class="featured-badge">Featured</span></div>
+            <div class="project-num">01 <span class="featured-badge">Featured</span></div>
             <div class="project-links">
               <a href="https://wastewise-nine-bay.vercel.app/index.html" target="_blank" rel="noopener">Live ↗</a>
               <a href="https://github.com/Ishan-113/Wastewise" target="_blank" rel="noopener">GitHub ↗</a>
@@ -165,50 +168,16 @@
           </div>
           <div class="project-icon">♻️</div>
           <h3>WasteWise — Recycle. Earn. Repeat.</h3>
-          <p>Recycling-rewards concept site (scan QR, drop waste, earn points) in plain HTML/CSS/JS, backed by a Java 17 + Spring Boot 3.3 REST API with MySQL, BCrypt hashing and JWT. Note: the API is documented to run locally — the live deployment serves the frontend.</p>
+          <p>Recycling-rewards concept site — scan a QR, drop waste, earn points — built in plain HTML/CSS/JS and backed by a Java 17 + Spring Boot 3.3 REST API with MySQL, BCrypt hashing and JWT auth. The API is documented to run locally; the live deployment serves the frontend.</p>
           <div class="project-tags">
             <span>Java</span><span>Spring Boot</span><span>MySQL</span><span>JWT</span><span>HTML/CSS/JS</span>
           </div>
         </div>
 
-        <!-- 03 Artify -->
-        <div class="project-card reveal featured" data-category="fullstack frontend">
-          <div class="project-header">
-            <div class="project-num">03 <span class="featured-badge">Featured</span></div>
-            <div class="project-links">
-              <a href="https://artify-5g0q.onrender.com" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/Artify" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">🎨</div>
-          <h3>Artify — Where Creativity Comes to Life</h3>
-          <p>Digital art & portfolio platform with cinematic video hero, searchable gallery, category filters, artist portfolios and shareable profile links (artify.studio/your-handle).</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>Node.js</span><span>Express</span><span>Render</span><span>Portfolio</span>
-          </div>
-        </div>
-
-        <!-- 04 SkillAlign — SIH 2026 -->
+        <!-- 02 AGROSAFE -->
         <div class="project-card reveal featured" data-category="ai fullstack">
           <div class="project-header">
-            <div class="project-num">04 <span class="featured-badge">SIH 2026</span></div>
-            <div class="project-links">
-              <a href="https://skill-align-nu.vercel.app" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/SkillAlign" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">📊</div>
-          <h3>SkillAlign — SIH PS 26134</h3>
-          <p>Smart India Hackathon 2026 build for the Government of Maharashtra problem statement on the education–industry skill gap. FastAPI backend serves REST endpoints for skills, experience/salary and locations over a SQLite job-postings dataset, with a Python script generating an insights report and a vanilla JS frontend.</p>
-          <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>SQLite</span><span>SIH 2026</span><span>Data Viz</span>
-          </div>
-        </div>
-
-        <!-- 05 AGROSAFE -->
-        <div class="project-card reveal featured" data-category="ai fullstack">
-          <div class="project-header">
-            <div class="project-num">05 <span class="featured-badge">Featured</span></div>
+            <div class="project-num">02 <span class="featured-badge">Featured</span></div>
             <div class="project-links">
               <a href="https://agrosafe-tawny.vercel.app" target="_blank" rel="noopener">Live ↗</a>
               <a href="https://github.com/Ishan-113/AGROSAFE" target="_blank" rel="noopener">GitHub ↗</a>
@@ -222,152 +191,37 @@
           </div>
         </div>
 
-        <!-- 06 Secure Login App -->
-        <div class="project-card reveal" data-category="fullstack security">
+        <!-- 03 SkillAlign — SIH 2026 -->
+        <div class="project-card reveal featured" data-category="ai fullstack">
           <div class="project-header">
-            <div class="project-num">06</div>
+            <div class="project-num">03 <span class="featured-badge">SIH 2026</span></div>
             <div class="project-links">
-              <a href="https://secure-login-app-teal.vercel.app" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/secure-login-app" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://skill-align-nu.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/SkillAlign" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
-          <div class="project-icon">🔐</div>
-          <h3>Secure Login App</h3>
-          <p>Full-stack auth with React + Vite + Tailwind, Node/Express, MongoDB, JWT & bcrypt. Protected dashboard, show/hide password and Render + Vercel deploy.</p>
+          <div class="project-icon">📊</div>
+          <h3>SkillAlign — SIH PS 26134</h3>
+          <p>Smart India Hackathon 2026 build for the Government of Maharashtra problem statement on the education–industry skill gap. FastAPI backend serves REST endpoints for skills, experience/salary and locations over a SQLite job-postings dataset, with a Python script generating an insights report and a vanilla JS frontend.</p>
           <div class="project-tags">
-            <span>React</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span>
+            <span>Python</span><span>FastAPI</span><span>SQLite</span><span>SIH 2026</span><span>Data Viz</span>
           </div>
         </div>
 
-        <!-- 07 InternGuard AI -->
-        <div class="project-card reveal" data-category="ai security">
+        <!-- 04 InnoVate -->
+        <div class="project-card reveal featured" data-category="frontend fullstack">
           <div class="project-header">
-            <div class="project-num">07</div>
+            <div class="project-num">04 <span class="featured-badge">New</span></div>
             <div class="project-links">
-              <a href="https://internguard-ai.vercel.app" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/internguard-ai" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://inno-vate-seven.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/Ishan-113/InnoVate" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
-          <div class="project-icon">🛡️</div>
-          <h3>InternGuard AI</h3>
-          <p>Internship email risk analyzer: paste any offer email, get 0–100 risk score, red flags vs trust signals, tailored next steps and a ready-to-send verification reply.</p>
+          <div class="project-icon">💡</div>
+          <h3>InnoVate — E-Cell Challenge Dashboard</h3>
+          <p>Submission-monitoring dashboard for a college E-Cell innovation challenge: reads live Google Sheet responses (via Apps Script API or public sheet), tracks 125 slots across 5 domains × 25 problem statements, and shows VALID / DUPLICATE / FULL status without any second database.</p>
           <div class="project-tags">
-            <span>JavaScript</span><span>AI</span><span>Risk Scoring</span><span>Vercel</span>
-          </div>
-        </div>
-
-        <!-- 08 ALETHEIA (team hackathon prototype) -->
-        <div class="project-card reveal" data-category="ai frontend">
-          <div class="project-header">
-            <div class="project-num">08 <span class="featured-badge">Team build</span></div>
-          </div>
-          <div class="project-icon">🔍</div>
-          <h3>ALETHEIA — Misinformation Defense Engine</h3>
-          <p>Team hackathon prototype for real-time misinformation verification: claim streaming, risk scoring, evidence reports and SHA-256-linked records over REST APIs and server-sent events. I contributed to the frontend and verification workflow; presented as a team demo.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>REST APIs</span><span>SSE</span><span>Team Prototype</span>
-          </div>
-        </div>
-
-        <!-- 09 Weather App -->
-        <div class="project-card reveal" data-category="frontend">
-          <div class="project-header">
-            <div class="project-num">09</div>
-            <div class="project-links">
-              <a href="https://weather-app-chi-two-25.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/weather-app" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">🌤️</div>
-          <h3>Weather App</h3>
-          <p>Real-time weather via OpenWeatherMap REST API: city search, temperature, humidity, wind and dynamic icons with async/await + error handling.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span>
-          </div>
-        </div>
-
-        <!-- 10 Expense Tracker -->
-        <div class="project-card reveal" data-category="frontend">
-          <div class="project-header">
-            <div class="project-num">10</div>
-            <div class="project-links">
-              <a href="https://expense-tracker-ishan-1224.vercel.app" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/expense-tracker" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">💰</div>
-          <h3>Expense Tracker</h3>
-          <p>Clean tracker with category filters, real-time totals, persistent localStorage and animated monospace UI.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>localStorage</span><span>CSS</span>
-          </div>
-        </div>
-
-        <!-- 11 Blackjack -->
-        <div class="project-card reveal" data-category="frontend">
-          <div class="project-header">
-            <div class="project-num">11</div>
-            <div class="project-links">
-              <a href="https://blackjack-alpha-wine.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/blackjack" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">🃏</div>
-          <h3>Blackjack Game</h3>
-          <p>Playable Blackjack with real suits, bust detection, win logic and chip betting system.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>Game Logic</span>
-          </div>
-        </div>
-
-        <!-- 12 GoT Lore Map -->
-        <div class="project-card reveal" data-category="frontend">
-          <div class="project-header">
-            <div class="project-num">12</div>
-            <div class="project-links">
-              <a href="https://go-t-lore-map.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/GoT-Lore-Map" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">⚔️</div>
-          <h3>GoT Lore Map</h3>
-          <p>Interactive Known World map with character archives and house encyclopaedia for Game of Thrones lore.</p>
-          <div class="project-tags">
-            <span>Interactive Map</span><span>JavaScript</span>
-          </div>
-        </div>
-
-        <!-- 13 Pentest Cheatsheet -->
-        <div class="project-card reveal" data-category="security frontend">
-          <div class="project-header">
-            <div class="project-num">13</div>
-            <div class="project-links">
-              <a href="https://pentest-cheatsheet-tau.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/Pentest_cheatsheet" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">🖥️</div>
-          <h3>Pentest Cheatsheet Terminal</h3>
-          <p>Kali-style browser terminal for nmap, sqlmap, hydra, gobuster, msfconsole, john, netcat, linPEAS, ffuf & scp.</p>
-          <div class="project-tags">
-            <span>Pentesting</span><span>Linux</span><span>Terminal UI</span>
-          </div>
-        </div>
-
-        <!-- 14 Portfolio -->
-        <div class="project-card reveal" data-category="frontend">
-          <div class="project-header">
-            <div class="project-num">14</div>
-            <div class="project-links">
-              <a href="https://portfolio-ishanp.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/Ishan-113/portfolio" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </div>
-          <div class="project-icon">✨</div>
-          <h3>This Portfolio</h3>
-          <p>The site you're reading — hand-built with vanilla HTML, CSS and JavaScript: filterable project grid, experience and certificate section, ATS-friendly resume page, and a responsive layout with reduced-motion support.</p>
-          <div class="project-tags">
-            <span>Responsive</span><span>Animations</span><span>Accessibility</span>
+            <span>React</span><span>Vite</span><span>Apps Script</span><span>Google Sheets</span>
           </div>
         </div>
 
@@ -453,7 +307,7 @@
           </div>
         </div>
         <div class="skill-group reveal">
-          <h4>Backend & Data</h4>
+          <h4>Backend &amp; Data</h4>
           <div class="skill-items">
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>Node + Express</div>
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"/>FastAPI</div>
@@ -464,12 +318,12 @@
           </div>
         </div>
         <div class="skill-group reveal">
-          <h4>Security & Tools</h4>
+          <h4>Security &amp; Tools</h4>
           <div class="skill-items">
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"/>Kali Linux · Nmap</div>
             <div class="skill-item">Burp Suite · Metasploit</div>
             <div class="skill-item">JWT · bcrypt · Auth</div>
-            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>Git & GitHub</div>
+            <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>Git &amp; GitHub</div>
             <div class="skill-item"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" style="filter:invert(1)"/>Vercel · Render</div>
           </div>
         </div>
@@ -513,12 +367,12 @@
     <div class="container">
       <div class="section-tag reveal">05 — Cybersecurity Lab</div>
       <h2 class="section-title reveal">Hands-on hacking, not just theory.</h2>
-      <p class="cyberlab-desc reveal">Kali Linux home lab on VMware + Metasploitable2/DVWA + TryHackMe & HackTheBox — every exploit chain documented in a public writeups repo.</p>
+      <p class="cyberlab-desc reveal">Kali Linux home lab on VMware + Metasploitable2/DVWA + TryHackMe &amp; HackTheBox — every exploit chain documented in a public writeups repo.</p>
 
       <div class="cyberlab-grid">
         <div class="cyber-card reveal">
           <div class="cyber-card-icon">🖥️</div>
-          <h4>Home Lab — Metasploitable2 & DVWA</h4>
+          <h4>Home Lab — Metasploitable2 &amp; DVWA</h4>
           <p>Kali 2026.1 (VMware) + Metasploitable2. Exploited vsftpd 2.3.4 (CVE-2011-2523) and Samba usermap_script (CVE-2007-2447) via Metasploit for root shell, cracked 6/7 hashes with John. Manual DVWA: UNION SQLi, command injection, SUID nmap privesc.</p>
         </div>
         <div class="cyber-card reveal">

@@ -60,39 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => el.classList.add('visible'), 100 + i * 100);
   });
 
-  initTilt();
   initFilters();
   initContactHover();
 });
-
-// ===== 3D Tilt (performant, rAF) =====
-function initTilt() {
-  if (isTouch || prefersReduced) return;
-  $$('.project-card, .cyber-card').forEach(card => {
-    let raf = null;
-    let mouseX = 0, mouseY = 0;
-    function update() {
-      raf = null;
-      const rect = card.getBoundingClientRect();
-      const cx = rect.width / 2, cy = rect.height / 2;
-      const rx = (mouseY - cy) / 14;
-      const ry = (cx - mouseX) / 14;
-      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-    }
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      mouseX = e.clientX - r.left;
-      mouseY = e.clientY - r.top;
-      if (!raf) raf = requestAnimationFrame(update);
-      card.style.transition = 'transform 0.1s ease';
-    });
-    card.addEventListener('mouseleave', () => {
-      if (raf) cancelAnimationFrame(raf);
-      card.style.transform = '';
-      card.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1)';
-    });
-  });
-}
 
 // ===== Project filters =====
 function initFilters() {
@@ -106,7 +76,8 @@ function initFilters() {
       const f = btn.dataset.filter;
       cards.forEach(c => {
         const cats = (c.dataset.category || '').split(' ');
-        const show = f === 'all' || cats.includes(f);
+        const isFeatured = c.classList.contains('featured');
+        const show = f === 'featured' ? isFeatured : f === 'all' || cats.includes(f);
         c.classList.toggle('hidden', !show);
         if (show) {
           c.style.animation = 'none';
@@ -127,49 +98,6 @@ function initContactHover() {
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
       card.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
-  });
-}
-
-// ===== Cursor system (desktop only, rAF) =====
-if (!isTouch && !prefersReduced) {
-  const glow = document.createElement('div'); glow.className = 'cursor-glow';
-  const dot = document.createElement('div'); dot.className = 'cursor-dot';
-  const ring = document.createElement('div'); ring.className = 'cursor-ring';
-  document.body.append(glow, ring, dot);
-
-  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-  let rx = mx, ry = my;
-  const LERP = 0.11;
-
-  document.addEventListener('mousemove', (e) => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    glow.style.left = mx + 'px'; glow.style.top = my + 'px';
-  }, { passive: true });
-
-  // hide when leaving window
-  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; glow.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; glow.style.opacity = '1'; });
-
-  function animate() {
-    rx += (mx - rx) * LERP;
-    ry += (my - ry) * LERP;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animate);
-  }
-  animate();
-
-  // hover state
-  const hoverSel = 'a, button, .project-card, .about-card, .contact-card, .cert-card, .skill-item, .btn-primary, .btn-secondary, .cyber-card, .htb-pill, .filter-btn, .doc-card';
-  document.addEventListener('mouseover', (e) => {
-    if (e.target.closest(hoverSel)) document.body.classList.add('cursor-hover');
-  });
-  document.addEventListener('mouseout', (e) => {
-    if (e.target.closest(hoverSel)) {
-      // check if still hovering another interactive
-      const still = document.querySelector(':hover');
-      if (!still || !still.closest(hoverSel)) document.body.classList.remove('cursor-hover');
-    }
   });
 }
 
