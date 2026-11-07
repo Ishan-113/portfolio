@@ -10,16 +10,16 @@
   <meta property="og:title" content="Ishan Prajapati — Resume"/>
   <meta property="og:description" content="Computer Engineering student. React, Node.js, FastAPI, Spring Boot. Web Development Intern at InAmigos Foundation."/>
   <meta property="og:url" content="https://portfolio-ishanp.vercel.app/resume.html"/>
-  <meta name="theme-color" content="#080c14"/>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080c14'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%2360a5fa' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
+  <meta name="theme-color" content="#f9f6ee"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c2410c'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E"/>
   <title>Ishan Prajapati — Resume</title>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080c14;
-      color: #e2e8f0;
+      font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+      background: #f9f6ee;
+      color: #221a10;
       min-height: 100vh;
       padding: 32px 20px 48px;
       line-height: 1.5;
@@ -31,53 +31,56 @@
       display: flex; align-items: center; justify-content: space-between;
       gap: 12px; flex-wrap: wrap; margin-bottom: 24px;
     }
-    .back-btn { font-size: 13px; color: #60a5fa; text-decoration: none; }
+    .back-btn { font-size: 13px; color: #9a3412; font-weight: 600; text-decoration: none; }
     .back-btn:hover { text-decoration: underline; }
     .actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn {
       display: inline-block; font-size: 13px; font-weight: 600;
-      padding: 10px 20px; border-radius: 8px; text-decoration: none;
+      padding: 10px 20px; border-radius: 9px; text-decoration: none;
       cursor: pointer; border: 1px solid transparent; font-family: inherit;
+      transition: all .2s;
     }
-    .btn-download { background: #3b82f6; color: #fff; }
-    .btn-download:hover { background: #60a5fa; }
+    .btn-download { background: #c2410c; color: #fff; }
+    .btn-download:hover { background: #9a3412; transform: translateY(-1px); }
     .btn-print {
-      background: transparent; color: #e2e8f0;
-      border-color: rgba(255,255,255,0.2);
+      background: #fffdf8; color: #221a10;
+      border-color: #d9d0bc;
     }
-    .btn-print:hover { border-color: #3b82f6; }
+    .btn-print:hover { border-color: #221a10; transform: translateY(-1px); }
     .ats-note {
-      font-size: 12px; color: #64748b; margin-bottom: 20px;
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
-      padding: 10px 14px; background: rgba(255,255,255,0.02);
+      font-size: 12px; color: #5d5546; margin-bottom: 20px;
+      border: 1px solid #e7e0d1; border-radius: 9px;
+      padding: 10px 14px; background: #fffdf8;
     }
 
     /* ── The resume paper: single column, ATS-readable ── */
     .paper {
-      background: #fff; color: #111;
-      border-radius: 8px; padding: 40px 44px;
+      background: #fffdf8; color: #221a10;
+      border: 1px solid #e7e0d1;
+      border-radius: 10px; padding: 40px 44px;
+      box-shadow: 0 10px 28px rgba(34,26,16,.08);
       font-size: 13px; line-height: 1.5;
     }
-    .paper a { color: #1d4ed8; text-decoration: none; }
+    .paper a { color: #9a3412; text-decoration: none; }
     .paper a:hover { text-decoration: underline; }
     .r-name {
       font-size: 26px; font-weight: 700; text-align: center;
-      letter-spacing: 0.5px; color: #111; margin-bottom: 2px;
+      letter-spacing: 0.5px; color: #221a10; margin-bottom: 2px;
     }
     .r-tag {
       text-align: center; font-size: 14px; font-weight: 700;
-      color: #111; margin-bottom: 6px;
+      color: #221a10; margin-bottom: 6px;
     }
-    .r-contact { text-align: center; font-size: 11.5px; color: #333; margin-bottom: 4px; }
+    .r-contact { text-align: center; font-size: 11.5px; color: #3a3427; margin-bottom: 4px; }
     .r-contact:last-of-type { margin-bottom: 0; }
     .r-section { margin-top: 16px; }
     .r-section > h2 {
       font-size: 13px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: #111;
-      border-bottom: 1.5px solid #1d4ed8;
+      text-transform: uppercase; color: #221a10;
+      border-bottom: 1.5px solid #c2410c;
       padding-bottom: 3px; margin-bottom: 8px;
     }
-    .r-section p, .r-section li { font-size: 12.5px; color: #111; }
+    .r-section p, .r-section li { font-size: 12.5px; color: #221a10; }
     .r-section ul { list-style: disc; padding-left: 20px; }
     .r-section li { margin-bottom: 3px; }
     .r-job { font-size: 12.5px; font-weight: 700; margin-bottom: 4px; }
@@ -86,7 +89,7 @@
 
     @media (max-width: 640px) {
       body { padding: 20px 10px 40px; }
-      .paper { padding: 24px 18px; border-radius: 6px; }
+      .paper { padding: 24px 18px; border-radius: 8px; }
       .r-name { font-size: 21px; }
       .topbar { flex-direction: column; align-items: stretch; }
       .actions { flex-direction: column; }
@@ -97,7 +100,7 @@
       body { background: #fff; padding: 0; }
       .topbar, .ats-note { display: none !important; }
       .page { max-width: 100%; }
-      .paper { border-radius: 0; padding: 0; font-size: 11px; }
+      .paper { border: none; box-shadow: none; border-radius: 0; padding: 0; font-size: 11px; }
       .r-name { font-size: 20px; }
       .r-section p, .r-section li, .r-job, .r-proj { font-size: 10.5px; }
       .r-section { margin-top: 10px; }
@@ -108,103 +111,81 @@
 <body>
   <div class="page">
     <div class="topbar">
-      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+      <a href="index.html" class="back-btn">&#8592; Back to Portfolio</a>
       <div class="actions">
-        <a class="btn btn-download" href="assets/Ishan_Prajapati_Resume.pdf" download="Ishan_Prajapati_Resume.pdf">Download Resume (PDF) ↓</a>
+        <a class="btn btn-download" href="assets/Ishan_Prajapati_Resume.pdf" download="Ishan_Prajapati_Resume.pdf">Download Resume (PDF) &#8595;</a>
         <button class="btn btn-print" onclick="window.print()">Print</button>
       </div>
     </div>
-    <p class="ats-note">ATS-friendly format: single column, standard headings, selectable text, no graphics-as-text. The downloadable PDF contains the same content in the same reading order.</p>
+    <p class="ats-note">ATS-friendly format: single column, standard headings, selectable text, no graphics-as-text. This page shows the same content, in the same reading order, as the downloadable PDF.</p>
 
     <main class="paper" aria-label="Resume of Ishan Prajapati">
       <h1 class="r-name">ISHAN PRAJAPATI</h1>
-      <p class="r-tag">Computer Engineering Student</p>
-      <p class="r-contact">Mumbai, India | <a href="mailto:ishanprajapati12112007@gmail.com">ishanprajapati12112007@gmail.com</a> | +91 9867487579</p>
-      <p class="r-contact"><a href="https://portfolio-ishanp.vercel.app/">portfolio-ishanp.vercel.app</a> | <a href="https://linkedin.com/in/ishan-prajapati-607b953b5">linkedin.com/in/ishan-prajapati-607b953b5</a> | <a href="https://github.com/Ishan-113">github.com/Ishan-113</a></p>
+      <p class="r-tag">Computer Engineering Student | Full-Stack Web Developer</p>
+      <p class="r-contact"><a href="mailto:ishanprajapati12112007@gmail.com">ishanprajapati12112007@gmail.com</a> &nbsp;|&nbsp; +91 9867487579 &nbsp;|&nbsp; Mumbai, India</p>
+      <p class="r-contact"><a href="https://portfolio-ishanp.vercel.app/">Portfolio</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/ishan-prajapati-607b953b5">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/Ishan-113">GitHub</a></p>
 
       <section class="r-section" aria-label="Professional summary">
         <h2>Professional Summary</h2>
-        <p>Computer Engineering student (Semester 3, first-year CGPA 9.2/10) with hands-on experience building full-stack authentication systems, an ML-powered agri-tech product, Smart India Hackathon and hackathon prototypes, and authorized cybersecurity lab projects. Web Development Intern at InAmigos Foundation (Sep 2026). Comfortable with React, JavaScript, Node.js/Express, FastAPI, REST APIs, Git/GitHub and security tools in Kali Linux.</p>
+        <p>Computer Engineering student (Semester 3) with a 9.2/10 first-year CGPA and hands-on experience building full-stack authentication systems, an ML-powered agri-tech product and Smart India Hackathon prototypes. Currently a Web Development Intern at InAmigos Foundation. Comfortable with React, JavaScript, Node.js/Express, FastAPI, REST APIs, Git/GitHub; seeking to contribute to practical web development and modern engineering work.</p>
       </section>
 
       <section class="r-section" aria-label="Experience">
         <h2>Experience</h2>
-        <p class="r-job">Web Development Intern | InAmigos Foundation (registered non-profit), Remote | 10 Sep 2026 – 23 Sep 2026</p>
+        <p class="r-job">Web Development Intern &nbsp;|&nbsp; InAmigos Foundation &nbsp;|&nbsp; Remote &nbsp;|&nbsp; 10 Sep 2026 &#8211; 23 Sep 2026</p>
         <ul>
-          <li>Selected for a remote web development internship; completed assigned web development tasks on deadline, took part in team discussions and activities, and followed foundation policies including confidentiality of sensitive information.</li>
-          <li>Recognized with a Certificate of Appreciation for dedicated efforts and received a Letter of Recommendation from the Founder and CEO.</li>
+          <li>Completed web development tasks assigned by the team at a registered non-profit and took part in group discussions and activities.</li>
+          <li>Delivered tasks on deadline while following foundation policies and maintaining confidentiality of sensitive information.</li>
         </ul>
       </section>
 
       <section class="r-section" aria-label="Technical skills">
         <h2>Technical Skills</h2>
-        <p><strong>Languages and Web:</strong> JavaScript (ES6+), HTML5, CSS3, Python, Java, C, C++<br/>
-        <strong>Frontend:</strong> React.js, Tailwind CSS, Responsive Design, DOM Manipulation<br/>
-        <strong>Backend and APIs:</strong> Node.js, Express.js, FastAPI, Spring Boot, REST APIs, JWT, bcrypt<br/>
-        <strong>Databases:</strong> MongoDB, MySQL, SQLite<br/>
-        <strong>ML / Data:</strong> TensorFlow, MobileNetV2 (transfer learning), Google Colab<br/>
-        <strong>Tools and Deployment:</strong> Git, GitHub, VS Code, Vercel, Render<br/>
-        <strong>Cybersecurity:</strong> Kali Linux, Nmap, Burp Suite, Metasploit, John the Ripper</p>
+        <ul>
+          <li><strong>Languages &amp; Web:</strong> JavaScript (ES6+), HTML5, CSS3, Python, Java, C, C++</li>
+          <li><strong>Frontend:</strong> React.js, CSS3 (latest), Responsive Design, DOM Manipulation</li>
+          <li><strong>Backend &amp; APIs:</strong> Node.js, FastAPI, Spring Boot, REST APIs, JWT, bcrypt</li>
+          <li><strong>Databases:</strong> MongoDB, MySQL</li>
+          <li><strong>ML / Data:</strong> TensorFlow, MobileNetV2 (transfer learning), Google Colab</li>
+          <li><strong>Tools &amp; Deployment:</strong> Git, GitHub, VS Code, Vercel, Render</li>
+          <li><strong>Strengths:</strong> Debugging, Documentation, Problem Solving, Team Collaboration</li>
+        </ul>
       </section>
 
       <section class="r-section" aria-label="Selected projects">
         <h2>Selected Projects</h2>
 
-        <p class="r-proj">AgroSafe – Crop Health App | React, FastAPI, TensorFlow/MobileNetV2 | <a href="https://agrosafe-tawny.vercel.app">Live Demo</a> | <a href="https://github.com/Ishan-113/AGROSAFE">GitHub</a></p>
+        <p class="r-proj">AgroSafe &nbsp;|&nbsp; React Native (PWA), FastAPI, TensorFlow/MobileNetV2 &nbsp;|&nbsp; <a href="https://agrosafe-tawny.vercel.app" target="_blank" rel="noopener">Live Demo</a> &nbsp;|&nbsp; <a href="https://github.com/Ishan-113/AGROSAFE" target="_blank" rel="noopener">GitHub</a></p>
         <ul>
-          <li>Detects paddy/rice diseases from leaf photos and returns treatment guidance from a curated prescription library.</li>
-          <li>Trained MobileNetV2 on the 10,407-image Paddy Doctor dataset (10 classes); serves predictions above a 70% confidence threshold with Green/Yellow/Red indicators.</li>
+          <li>Built a free crop-health app that detects paddy/rice diseases from photos and returns verified treatment guidance for farmers.</li>
+          <li>Trained MobileNetV2 on 10,407 images (10 classes), reaching ~90.9% accuracy above a 70% confidence threshold.</li>
         </ul>
 
-        <p class="r-proj">SkillAlign – Smart India Hackathon 2026 (PS 26134) | FastAPI, SQLite, Python, HTML/CSS/JS | <a href="https://skill-align-nu.vercel.app">Live Demo</a> | <a href="https://github.com/Ishan-113/SkillAlign">GitHub</a></p>
+        <p class="r-proj">SkillAlign &#8211; Smart India Hackathon 2026 (PS 26134) &nbsp;|&nbsp; FastAPI, SQLite, Python, HTML/CSS/JS &nbsp;|&nbsp; <a href="https://skill-align-nu.vercel.app" target="_blank" rel="noopener">Live Demo</a> &nbsp;|&nbsp; <a href="https://github.com/Ishan-113/SkillAlign" target="_blank" rel="noopener">GitHub</a></p>
         <ul>
-          <li>Job-market analysis platform exposing the gap between education and industry skills; FastAPI REST endpoints for skills, experience, salary, locations, insights and auth.</li>
-          <li>Wrote a Python analysis script generating an insights report from a job-postings dataset; built and deployed the frontend on Vercel.</li>
+          <li>Built a job-market analysis platform exposing the education-to-industry skills gap, with a FastAPI backend serving REST endpoints for skills, salary, locations and user auth.</li>
+          <li>Wrote a Python insights-report script and deployed the frontend on Vercel.</li>
         </ul>
 
-        <p class="r-proj">Artify – Digital Art Platform | Node.js, Express, SQLite (libSQL), JWT | <a href="https://artify-5g0q.onrender.com">Live Demo</a> | <a href="https://github.com/Ishan-113/Artify">GitHub</a></p>
+        <p class="r-proj">WasteWise &#8211; Smart Recycling Rewards &nbsp;|&nbsp; HTML, CSS, JS, Java 17, Spring Boot, MySQL, JWT &nbsp;|&nbsp; <a href="https://wastewise-nine-bay.vercel.app/index.html" target="_blank" rel="noopener">Live Demo</a> &nbsp;|&nbsp; <a href="https://github.com/Ishan-113/Wastewise" target="_blank" rel="noopener">GitHub</a></p>
         <ul>
-          <li>Full-stack creative platform with Express REST backend, bcrypt password hashing and JWT authentication; searchable gallery, category filters and artist portfolios; deployed on Render.</li>
+          <li>Built a responsive recycling-rewards website (scan QR, drop waste, earn points) with a Spring Boot register/login REST API using MySQL, BCrypt and JWT.</li>
         </ul>
 
-        <p class="r-proj">Secure Login App | React, Tailwind CSS, Node.js, Express, MongoDB, JWT | <a href="https://secure-login-app-teal.vercel.app">Live Demo</a> | <a href="https://github.com/Ishan-113/secure-login-app">GitHub</a></p>
-        <ul>
-          <li>Registration, login, logout and protected dashboard; bcryptjs hashing with JWT-protected routes; React frontend on Vercel with Express/MongoDB API on Render.</li>
-        </ul>
-
-        <p class="r-proj">InternGuard AI – Internship Email Risk Analyzer | HTML, CSS, Vanilla JS | <a href="https://internguard-ai.vercel.app">Live Demo</a> | <a href="https://github.com/Ishan-113/internguard-ai">GitHub</a></p>
-        <ul>
-          <li>Client-side tool scoring internship offer emails 0–100 with red flags, trust signals, next steps and a verification reply template; scan history in localStorage.</li>
-        </ul>
-
-        <p class="r-proj">WasteWise – Smart Recycling Rewards | HTML/CSS/JS, Java 17, Spring Boot, MySQL, JWT | <a href="https://wastewise-nine-bay.vercel.app/index.html">Live Site</a> | <a href="https://github.com/Ishan-113/Wastewise">GitHub</a></p>
-        <ul>
-          <li>Responsive recycling-rewards site plus a register/login REST API in Spring Boot with MySQL, BCrypt hashing and JWT (API documented for local run).</li>
-        </ul>
-
-        <p class="r-proj">ALETHEIA – Misinformation Defense Engine (team hackathon prototype) | JavaScript, REST APIs, SSE, SHA-256</p>
-        <ul>
-          <li>Collaborated on a real-time verification workflow prototype: claim streaming, risk scoring, evidence reports and SHA-256-linked records.</li>
-        </ul>
-
-        <p><strong>Additional projects:</strong> InnoVate E-Cell challenge dashboard (React, Apps Script) | GoT Lore Map | Expense Tracker (localStorage) | Weather App (OpenWeatherMap API) | Blackjack</p>
-      </section>
-
-      <section class="r-section" aria-label="Cybersecurity lab">
-        <h2>Cybersecurity Lab and Public Writeups</h2>
-        <p>Authorized practice only: Kali Linux lab on VMware with Metasploitable2 and DVWA; TryHackMe and Hack The Box environments. Enumeration, web vulnerabilities, hash cracking, controlled exploitation and privilege-escalation workflows, documented in public writeups: <a href="https://github.com/Ishan-113/pentest-writeups">github.com/Ishan-113/pentest-writeups</a></p>
+        <p><strong>More projects:</strong> <a href="https://github.com/Ishan-113?tab=repositories" target="_blank" rel="noopener">github.com/Ishan-113</a></p>
       </section>
 
       <section class="r-section" aria-label="Education">
         <h2>Education</h2>
-        <p><strong>B.E. Computer Engineering</strong>, Thakur Shree DPS College of Engineering and Management, Mumbai – First-Year CGPA 9.2/10, currently enrolled (Semester 3)<br/>
-        <strong>Higher Secondary (Class XII)</strong>, Maharashtra State Board – 82.83% | <strong>Secondary (Class X)</strong> – 86.2%</p>
+        <p><strong>B.E. Computer Engineering &nbsp;|&nbsp; Thakur Shree DPS College of Engineering and Management, Mumbai &nbsp;|&nbsp; First-Year CGPA: 9.2/10 (Currently Semester 3)</strong></p>
+        <p>Higher Secondary (Class XII), Maharashtra State Board: 82.83% &nbsp;|&nbsp; Secondary (Class X), Maharashtra State Board: 86.2%</p>
       </section>
 
       <section class="r-section" aria-label="Certifications">
-        <h2>Certifications and Achievements</h2>
-        <p>Cisco Networking Academy: Introduction to Cybersecurity, Networking Basics, Operating Systems Basics (verified Credly badges).<br/>
-        InAmigos Foundation: Certificate of Internship and Certificate of Appreciation (Sep 2026).</p>
+        <h2>Certifications</h2>
+        <ul>
+          <li>Cisco Networking Academy: Networking Basics and Operating Systems Basics.</li>
+        </ul>
       </section>
     </main>
   </div>
